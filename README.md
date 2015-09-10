@@ -38,6 +38,7 @@ The web page must have atleast :
 
 ##AJAX
 * view table user from database using AJAX
+* create login form using AJAX
 
 ##jQuery
 * create a datepicker using jQuery
