@@ -37,8 +37,13 @@ The web page must have atleast :
 * create 2 dropdown lists for place of birth input, create a dynamic dropdown menu to show province/state and city of birth
 
 ##AJAX
-* view table user from database using AJAX
+* search data user from database using AJAX
+ * on admin page to view user table
+ * on load, view all user data
+ * search data user using AJAX
 * create login form using AJAX
+ * validate login
+ * try to add animation when login failed by updating the DOM using AJAX
 
 ##jQuery
 * create a datepicker using jQuery
