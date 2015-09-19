@@ -27,7 +27,7 @@ if(isset($_SESSION['username']) && isset($_SESSION['is_admin'])){
 <body onload="load_province()">
 
 	<h1>Registration Page</h1>
-	<form action="do_register.php" method="post" onsubmit="event.preventDefault(); validate_form();">
+	<form action="do_register.php" method="post" onsubmit="event.preventDefault(); validate_form();" id="register_form">
 		<label for="username">Username</label>
 		<input type="text" name="username" id="username" required>
 		<label for="password">Password</label>
@@ -67,10 +67,10 @@ if(isset($_SESSION['username']) && isset($_SESSION['is_admin'])){
 		}
 
 		function validate_email () {
-			var pattern = new RegExp('^[a-z]\w');
+			var pattern = /^[a-z][\w_]*@[a-z0-9]+(\.[a-z]+)+$/;
 			var email = document.getElementById('email').value;
 
-			return pattern.test(email);
+			return email.match(pattern);
 		}
 
 		function validate_form () {
@@ -78,10 +78,12 @@ if(isset($_SESSION['username']) && isset($_SESSION['is_admin'])){
 			var email_check = validate_email();
 
 			if(pass_check && email_check){
-				alert('success!');
+
+				document.getElementById('register_form').submit();
 				return true;
+
 			} else {
-				var msg = "Data yang anda masukkan tidak valid! \n alasan :\n";
+				var msg = "Data yang anda masukkan tidak valid! \nalasan :\n";
 
 				if(!pass_check){
 					msg += "password anda tidak sama\n";
@@ -96,7 +98,7 @@ if(isset($_SESSION['username']) && isset($_SESSION['is_admin'])){
 			}
 		}
 
-		function load_province (argument) {
+		function load_province () {
 			var province = document.getElementById('province');
 			
 			create_ajax_request("GET", "get_city.php", "", 
