@@ -1,6 +1,5 @@
 <?php require_once 'authenticate.php' ?>
 <?php require 'database.php' ?>
-<?php echo $current_user_id ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -30,12 +29,12 @@
      $sql = 'SELECT * FROM mutations ORDER BY id DESC';
      foreach ($db->query($sql) as $data) {
         echo '<tr>';
-        echo '<td>'. $row['id'] . '</td>';
-        echo '<td>'. $row['name'] . '</td>';
-        echo '<td>'. $row['date'] . '</td>';
-        echo '<td>'. $row['type'] . '</td>';
-        echo '<td>'. $row['amount'] . '</td>';
-        echo '<td>'. $row['note'] . '</td>';
+        echo '<td>'. $data['id'] . '</td>';
+        echo '<td>'. $data['name'] . '</td>';
+        echo '<td>'. $data['date'] . '</td>';
+        echo '<td>'. $data['type'] . '</td>';
+        echo '<td>'. $data['amount'] . '</td>';
+        echo '<td>'. $data['note'] . '</td>';
         echo '<td>Edit Delete</td>';
         echo '</tr>';
      }

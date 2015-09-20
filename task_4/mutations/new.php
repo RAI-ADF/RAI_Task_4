@@ -1,1 +1,5 @@
-<?php include '_form.php' ?>
+<?php
+$data = null;
+$action = 'POST';
+include '_form.php';
+?>
