@@ -1,4 +1,6 @@
+<?php require_once 'authenticate.php' ?>
 <?php require 'database.php' ?>
+<?php echo $current_user_id ?>
 
 <!DOCTYPE html>
 <html lang="en">
