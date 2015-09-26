@@ -28,9 +28,12 @@
 <form id="form_login" action="login.php" method="POST">
     username: <input type="text" name="username" id="username"/> <br/>
     password: <input type="password" name="password" id="password"/> <br />
+
     <button id="submit">Login</button>
 </form>
     <div id="ack"></div>
+    <br>
+    User baru,  <a href="registration.php">Registrasi disini</a>. 
 <script type="text/javascript" src="script/jquery-1.8.2.min.js"></script>
 </body>
 </html>
