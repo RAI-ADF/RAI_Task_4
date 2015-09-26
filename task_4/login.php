@@ -12,6 +12,7 @@ mysql_select_db($mysql_db_database, $con) or die("Could not select database");
 
 // $username ="admin";
 // $password ="1234";
+if(isset($_POST["username"]) && isset($_POST["password"])) {
 
 $username = mysql_real_escape_string( $_POST["username"] );
 $password = mysql_real_escape_string( $_POST["password"] );
@@ -29,11 +30,21 @@ $num_row = mysql_num_rows($result);
 		if( $num_row >=1 ) {
 
 			echo 'true';
-			$_SESSION['user_name']=$row['name'];			
-
+			$_SESSION['username']=$row['username'];		
+			$_SESSION['user_type'] =$row['user_type'];
+			if ($_SESSION['user_type'] ==1) {
+				echo "admin";
+				header("Location: adminPage.php");
+				
+			}elseif ($_SESSION['user_type'] ==2) {
+				echo "user";
+				 header("Location: clientPage.php");
+			}
+				
 		}
 		else{
-			echo 'false';
+			echo 'User not found  <a href=registration.php>Click Here to Register</a> ';
 		}
+}
 
 ?>
