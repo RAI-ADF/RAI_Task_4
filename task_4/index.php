@@ -1,69 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" href="styles.css" type="text/css" />
-	<title>Halaman Login</title>
-<script type="text/javascript">
-$(document).ready(function(){
-	
-   $("#login").click(function(){
-		username=$("#user_name").val();
-        password=$("#password").val();
+  <title>Halaman Login</title>
+  <script type="text/javascript">
 
-         $.ajax({
-            type: "POST",
-           url: "login.php",
-            data: "username="+username+"&password="+password,
-
-
-            success: function(html){
-			
-			  if(html=='true')
-              {
-                $("#login_form").fadeOut("normal");
-				$("#shadow").fadeOut();
-				$("#profile").html("<a href='logout.php' class='red' id='logout'>Logout</a>");
-				// You can redirect to other page here....
-              }
-              else
-              {
-                    $("#add_err").html("Wrong username or password");
-              }
-            },
-            beforeSend:function()
-			{
-                 $("#add_err").html("Loading...")
-            }
-        });
-         return false;
-    });
+  $("button#submit").click( function() {
+ 
+  if( $("#username").val() == "" || $("#password").val() == "" )
+    $("div#ack").html("Please enter both username and password");
+  else
+    $.post( $("#form_login").attr("action"),
+          $("#form_login :input").serializeArray(),
+      function(data) {
+        $("div#ack").html(data);
+      });
+ 
+  $("#form_login").submit( function() {
+     return false;  
+  });
+ 
 });
 </script>
-	
+
 </head>
 <body>
-	<?php session_start(); ?>
- 	<div id="profile">
-  	<?php if(isset($_SESSION['user_name'])){
-  	?>
-   	<a href='logout.php' id='logout'>Logout</a>
-  	<?php } else {?>
-   	<a id="login_a" href="#">login</a>
-  	<?php } ?>
-
-	<div id="login_form" class="loginform-in"</div>
-	<h2 align="center">Login</h1>
-	<div class="err" id="add_err"</div>
-	<fieldset>
-		<form action="login.php">
-				<div> <label for="user_name">Username</label>
-				<input type="text" size="30" name="user_name" id="user_name" /></div>
-				<div> <label for="password">Password</label>
-				<input type="password" size="30" name="password" id="password" /></div>
-				<div><input type="submit" id="login" name="login" value="Login" class="loginbutton"> </div>
-			
-		</form>
-	</fieldset>
-	</div>
+<h2 align="center"> Login </h2>
+<form id="form_login" action="login.php" method="POST">
+    username: <input type="text" name="username" id="username"/> <br/>
+    password: <input type="password" name="password" id="password"/> <br />
+    <button id="submit">Login</button>
+</form>
+    <div id="ack"></div>
+<script type="text/javascript" src="script/jquery-1.8.2.min.js"></script>
 </body>
 </html>
