@@ -8,14 +8,14 @@
 	//$formatted = $formated_time->format('H:i:s');
 	$mysql_time = date('H:m:s', $time);
 
-	$query = "INSERT into todo (userid, task, dates, time) values ({$_COOKIE['userid']},'{$task}', {$date}, '{$mysql_time}')";
-
+	$query = "INSERT into todo (userid, task, dates, time) values ({$_COOKIE['userid']},'{$task}', '{$date}', '{$mysql_time}')";
+	//echo $date;
 	if ($conn->query($query) === TRUE) {
 	    echo "New record created successfully";
-	    header("location: index.php");
+	    header("location: clientPage.php");
 	} else {
 	    echo "Error: " . $query . "<br>" . $conn->error;
-	    header("location: index.php");
+	    header("location: clientPage.php");
 	}
  
 	$conn->close();

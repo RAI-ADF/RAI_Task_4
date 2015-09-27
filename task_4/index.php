@@ -1,5 +1,11 @@
 <?php
-	require('_authenticate.php');
+	require('_authenticateUser.php');
+	include '_connection.php';
+
+	$sql = "SELECT * from todo where userid={$_COOKIE['userid']}";
+	//echo "$sql";;
+	$res = $conn->query($sql);
+	
 ?>
 
 <!DOCTYPE html>
@@ -8,25 +14,35 @@
 	<title></title>
 </head>
 <body>
-	<h1>to do</h1>
+	<h1>to do list</h1>
 	<div>
-		<form method="post" action="_index.php">
-			<div>
-				<label>task</label>
-				<input type="text" name="task" placeholder="write down your task">
-			</div>
-			<div>
-				<label>date</label>
-				<input type="date" name="date">
-			</div>
-			<div>
-				<label>time</label>ss
-				<input type="time" name="time">
-			</div>
-			<div>
-				<button type="submit">submit</button>
-			</div>
-		</form>
+		<table>
+			<thead>
+				<tr>
+					<td>no</td>
+					<td>task</td>	
+					<td>date</td>
+					<td>time</td>
+				</tr>
+			</thead>
+			<tbody>
+				<?php
+					$i=1;
+					while ($row = $res->fetch_assoc()) {
+				?>
+				<tr>
+					<td><?php echo "$i"; ?></td>
+					<td><?php echo $row['task']; ?></td>
+					<td><?php echo $row['dates']; ?></td>
+					<td><?php echo $row['time']; ?></td>
+					<td><a <?php echo "href='_deleteTodo.php?id={$row['id']}'"; ?>>delete</a></td>
+					<td><a <?php echo "href='editTodo.php?id={$row['id']}'"; ?>>edit</a></td>
+				</tr>
+				<?php		
+					$i++;}
+				?>
+			</tbody>
+		</table>
 	</div>
 </body>
 </html>
