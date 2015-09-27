@@ -49,7 +49,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta name=description content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="assets/javascript/application.js"></script>
 </head>
+
+<?php include "header.php" ?>
 
 <h1>Login</h1>
 <form id="login" method="post">
