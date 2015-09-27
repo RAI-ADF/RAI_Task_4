@@ -40,6 +40,12 @@ if($_SESSION["user"]!='admin'){
                                     "<button class='btn btn-default' type=\"submit\">delete</button>".
                                     "</form>".
                                     "</td>";
+                                echo "<td>".
+                                    "<form action=\"updateNote.php\" method=\"post\" role=\"form\">".
+                                    "<input name=\"note\" type=\"hidden\" value=\"".$row[0]."\"></input>".
+                                    "<button class='btn btn-default' type=\"submit\">update</button>".
+                                    "</form>".
+                                    "</td>";
                                 echo "</tr>";
                             } ?>
                             <tr>
