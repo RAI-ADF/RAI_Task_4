@@ -6,8 +6,24 @@
 <html>
 <head>
 	<title></title>
+	<script type="text/javascript">
+		var ajaxRequest = new XMLHttpRequest();
+		function ajaxFunctionLoadUser(){	
+			ajaxRequest.onreadystatechange = processQueryLoadUser;
+
+			ajaxRequest.open("GET", "_all_user_data.php");
+			ajaxRequest.send();
+		}
+
+		function processQueryLoadUser(){
+			if(ajaxRequest.readyState==4){
+				//alert(ajaxRequest.responseText);
+				document.getElementById('allUser').innerHTML = ajaxRequest.responseText;
+			}
+		}
+	</script>
 </head>
-<body>
+<body onload="ajaxFunctionLoadUser();">
 	<h1>Admin Page</h1>
 	<div>
 		<div style="float: left;">
@@ -44,20 +60,23 @@
 				</tbody>
 			</table>
 		</div>
-		<div style="float: right;">
+		<div style="margin-left: 750px;">
 			<table>
 				<thead>
 					<tr>
 						<td>no</td>
 						<td>username</td>
+						<!--
 						<td>name</td>
 						<td>email</td>
 						<td>level</td>
 						<td>birth place</td>
 						<td>birth date</td>
 						<td>option</td>
+						-->
 					</tr>
 				</thead>
+				<!--
 				<tbody>
 					<?php
 						$i=1;
@@ -69,18 +88,23 @@
 					<tr>
 						<td><?php echo "$i"; ?></td>
 						<td><?php echo $row['username']; ?></td>
+						
 						<td><?php echo $row['name']; ?></td>
 						<td><?php echo $row['email']; ?></td>
 						<td><?php echo $row['level']; ?></td>
 						<td><?php echo $row['birth_place']; ?></td>
 						<td><?php echo $row['birth_date']; ?></td>
 						<td><a <?php echo "href='_deleteUser.php?id={$row['id']}'"; ?>>delete</a></td>
+						
 					</tr>
 					<?php
-							}
+							$i++;}
 						}
 
 					?>
+				</tbody>
+				-->
+				<tbody id="allUser">
 				</tbody>
 			</table>
 		</div>
