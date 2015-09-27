@@ -12,6 +12,23 @@
 <html>
 <head>
 	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+		    $(window).load(function(){
+		        $.getJSON("_todoJson.php", function(result){
+		        	var x = 0;
+		            $.each(result, function(i, field){
+		            	if(x!=0){
+		                	$("#table").append("<tr>"+ "<td>" + x + "</td>" + "<td>" + field.task + "</td>" +"<td>" + field.dates + "<td>" + field.time + "</td>" +"</td>" +"</tr>");
+		                }
+		                //$("#table").append("ok");
+		                x++;
+		            });
+		        });
+		    });
+		});
+	</script>
 </head>
 <body>
 	<h1>to do list</h1>
@@ -25,6 +42,10 @@
 					<td>time</td>
 				</tr>
 			</thead>
+			<tbody id="table">
+				
+			</tbody>
+			<!--
 			<tbody>
 				<?php
 					$i=1;
@@ -42,6 +63,7 @@
 					$i++;}
 				?>
 			</tbody>
+			-->
 		</table>
 	</div>
 </body>
