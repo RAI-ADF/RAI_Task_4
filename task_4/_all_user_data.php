@@ -9,6 +9,7 @@
 <tr>
 	<td><?php echo "$i"; ?></td>
 	<td><?php echo $row['username']; ?></td>
+	<td><a href="#" onclick="viewDetail(<?php echo $row['id']; ?>)">detail</a></td>
 </tr>
 <?php			
 			$i++;
