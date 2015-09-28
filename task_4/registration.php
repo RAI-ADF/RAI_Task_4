@@ -3,13 +3,44 @@
 <head>
 	<title>User Registration</title>
 	<style type="text/css" xml:space="preserve">
-		BODY, P,TD{ font-family: Arial,Verdana,Helvetica, sans-serif; font-size: 10pt }
-		A{font-family: Arial,Verdana,Helvetica, sans-serif;}
-		B {	font-family : Arial, Helvetica, sans-serif;	font-size : 12px;	font-weight : bold;}
-		.error_strings{ font-family:Verdana; font-size:14px; color:#660000;}
+		BODY, P,TD{ 
+			
+			font-family: Arial,Verdana,Helvetica, sans-serif; 
+			font-size: 10pt 
+		}
+
+		A {
+			
+			font-family: Arial,Verdana,Helvetica, sans-serif;
+		}
+
+		B {	
+			
+			font-family : Arial, Helvetica, sans-serif;	
+			font-size : 12px;	
+			font-weight : bold;
+		}
+
+		.error_strings	{ 
+			
+			font-family:Verdana;
+			font-size:14px; 
+			color:#660000;
+		}
+
 	</style><script language="JavaScript" src="gen_validatorv4.js"
 	type="text/javascript" xml:space="preserve"></script>
-	
+
+	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+
+	<script>
+		$(function() {
+			$(".datepicker").datepicker();
+		});
+	</script>
+
 </head>
 <body>
 	<form name="register" id='register' action="" method='post'>
@@ -33,11 +64,12 @@
 
 			<label for='confpassword' >Re Enter Password*:</label><br>
 			<input type='password' name='confpassword' id='confpassword' maxlength="50" /> <br>
+			<label for='dob'>Date of Birth:</label><br>
+			<input type="text" class="datepicker" /> <br>
+			<input type='submit' name='Submit' value='Submit' />
 			<br>
 			<div id="register_errorloc" class="error_strings"> </div>
 			<br>
-
-			<input type='submit' name='Submit' value='Submit' />
 			
 		</fieldset>
 	</form>
