@@ -29,7 +29,7 @@
     width: 92px;
 }
 
-.loginform-in fieldset label {
+.loginform-in fieldset label
     color: #7D7D7D;
     float: left;
     font-family: "Helvetica Neue";

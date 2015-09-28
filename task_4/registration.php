@@ -37,13 +37,13 @@
 
 	<script>
 		$(function() {
-			$(".datepicker").datepicker();
+			$(".datepickers").datepicker();
 		});
 	</script>
 
 </head>
 <body>
-	<form name="register" id='register' action="" method='post'>
+	<form name="register" id='register' action="adduser.php" method='post'>
 		<fieldset >
 			<legend>Register</legend>
 			<input type='hidden' name='submitted' id='submitted' value='1'/>
@@ -64,8 +64,10 @@
 
 			<label for='confpassword' >Re Enter Password*:</label><br>
 			<input type='password' name='confpassword' id='confpassword' maxlength="50" /> <br>
-			<label for='dob'>Date of Birth:</label><br>
-			<input type="text" class="datepicker" /> <br>
+			
+			<label for='datepicker'>Date of Birth:</label><br>
+			<input type="text" name="datepickers" id="datepickers" class="datepickers"  /> <br>
+
 			<input type='submit' name='Submit' value='Submit' />
 			<br>
 			<div id="register_errorloc" class="error_strings"> </div>
