@@ -10,7 +10,7 @@ if(!$username || !$pass) {
 echo "Masih ada data yang kosong!";
 echo "<a href="daftar.php">&amp;amp;laquo; Back</a>";
 } else {
-$simpan = mysql_query("INSERT INTO user(username, password) VALUES('$username','$pass')");
+$simpan = mysql_query("INSERT INTO `dbrai`.`user` (`username`, `password`, `nama`, `email`, `pob`, `dob`, `iduser`) VALUES (`$username`, `$password`, `$nama`, `$email`, `$pob`, `$dob`, `$iduser`);
 if($simpan) {
 echo "Pendaftaran Sukses, Silahkan <a href="login.php">Login</a>";
 } else {
