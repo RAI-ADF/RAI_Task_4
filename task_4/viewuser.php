@@ -26,33 +26,32 @@
 </div>
 <div id="bodytopmainPan">
 <div id="bodytopPan">
-	<h1>Welcome</h1>
-    <h2>Admin Page</h2>
-    <p>Silahkan pilih menu views</p>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
+	<?php
+	include 'koneksi.php';
+		$tampil = mysql_query("SELECT * FROM users  ORDER BY Username");
+		echo "<table class='list'><thead>
+          <tr>
+          <td class='left'>username</td>
+          <td class='left'>nama lengkap</td>
+          <td class='left'>email</td>
+		  <td class='left'>Tempat </td>
+		  <td class='left'>Tgl.Lahir</td>
+          <td class='left'>level</td>
+          </tr></thead><tbody>";
+		  echo " <h2>Data User</h2>";
+		   while ($r=mysql_fetch_array($tampil)){
+       echo "  <tr><td class='left'>$r[Username]</td>
+             <td class='left'>$r[Fullname]</td>
+		         <td class='left'><a href=mailto:$r[Email]>$r[Email]</a></td>
+				 <td class='left'>$r[Tempat]</td>
+				  <td class='left'>$r[Tanggal]</td>
+				 <td class='left'>$r[leveluser]</td></tr>";
+				 }
+	?>
+  
 	
 </div>
 </div>
-
-<div id="footermainPan">
-  <div id="footerPan">
-  	<p class="copyright">©Surya Saputra - 1103124304.</p>
-  	<ul class="templateworld">
-    </ul>
-	</div>
-	</div>
 </body>
 </body>
 

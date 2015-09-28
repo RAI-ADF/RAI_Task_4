@@ -6,51 +6,44 @@
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <link rel="stylesheet" href="assets/css/style.css">
    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-   <title>Client Page</title>
+   <title>Admin Page</title>
 </head>
 <body>
 
 <div id='cssmenu'>
 <ul>
-   <li><a href='clientPage.php'><span>Home</span></a></li>
-   <li class='active has-sub'><a href='#'><span>Input</span></a>
+   <li><a href='adminPage.php'><span>Home</span></a></li>
+   <li class='active has-sub'><a href='#'><span>View</span></a>
       <ul>
-         <li class='last'><a href='inputform.php'><span>Input Form</span></a>
+         <li class='last'><a href='viewuser.php'><span>View Users</span></a>
+         </li>
+         <li class='last'><a href='viewdata.php'><span>View Data</span></a>
          </li>
       </ul>
    </li>
-    <li><a href='logout.php'><span>Logout </span></a></li>
+   <li><a href='logout.php'><span>Logout </span></a></li>
 </ul>
 </div>
 <div id="bodytopmainPan">
 <div id="bodytopPan">
-	<h1>Welcome</h1>
-    <h2>Client Page</h2>
-    <p>Silahkan pilih menu input</p>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
+	<?php
+	include 'koneksi.php';
+		$tampil = mysql_query("SELECT * FROM data  ORDER BY Username");
+		echo "<table class='list'><thead>
+          <tr>
+          <td class='left'>username</td>
+          <td class='left'>Isi data</td>
+          </tr></thead><tbody>";
+		  echo " <h2>List data Input</h2>";
+		   while ($r=mysql_fetch_array($tampil)){
+       echo " </tr><td class='left'>$r[username]</td>
+             <td class='left'>$r[isi]</td></tr>";
+				 }
+	?>
+  
 	
 </div>
 </div>
-
-<div id="footermainPan">
-  <div id="footerPan">
-  	<p class="copyright">©Surya Saputra - 1103124304.</p>
-  	<ul class="templateworld">
-    </ul>
-	</div>
-	</div>
 </body>
 </body>
 
