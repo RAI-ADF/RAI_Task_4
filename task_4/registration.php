@@ -73,6 +73,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <input id="password_confirmation" name="password_confirmation" type="password"  placeholder="Password Confirmation" onkeyup="validate_password(); return false;" required>
     <input id="name" name="name" type="text" placeholder="Name">
     <input id="email" name="email" type="text" onkeyup="validate_email(); return false;" placeholder="Email">
+    <select id="province" name="province" class="province">
+      <option>Province</option>
+      <option value="Aceh">Aceh</option>
+      <option value="Jawa Barat">Jawa Barat</option>
+      <option value="Papua">Papua</option>
+    </select>
+    <select id="city" name="city" class="city">
+      <option>City</option>
+    </select>
     <input id="birthplace" name="birthplace" type="text" placeholder="birthplace">
     <input id="birthdate" name="birthdate" type="text" class="date" placeholder="Birthdate">
     <button type="submit" class="btn-minimal">Register</button>

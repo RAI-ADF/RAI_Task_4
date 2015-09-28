@@ -250,6 +250,7 @@ form.minimal input[type="email"],
 form.minimal input[type="number"],
 form.minimal input[type="search"],
 form.minimal input[type="password"],
+form.minimal select,
 form.minimal textarea {
 	background-color: rgb(255,255,255);
 	border: 1px solid rgb( 186, 186, 186 );
@@ -268,6 +269,11 @@ form.minimal textarea {
 	-moz-transition: all 0.1s linear;
 	-o-transition: all 0.1s linear;
 	  transition: all 0.1s linear;
+}
+
+form.minimal select {
+    display: inline-block;
+  	width: 49.5%;
 }
 
 [class*='btn-'] {

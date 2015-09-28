@@ -29,10 +29,21 @@ $(document).ready(function() {
     }
   });
 
-
   $( ".date" ).datepicker({
     changeMonth: true,
     changeYear: true
+  });
+
+  $("select.province").change(function(){
+    var selected = $(".province option:selected").val();
+    console.log (selected);
+    $.ajax({
+      type: "GET",
+      url: "_city.php",
+      data: { province: selected }
+    }).done(function(data){
+      $("select.city").html(data);
+    });
   });
 });
 
