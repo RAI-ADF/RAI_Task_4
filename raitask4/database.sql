@@ -6,7 +6,7 @@ CREATE TABLE user (
   email varchar(32) NOT NULL,
   place varchar(32) NOT NULL,
   tanggal varchar(32) NOT NULL,
-  PRIMARY KEY  (id, level)
+  PRIMARY KEY  (id)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
  
 INSERT INTO `user` VALUES (1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'Administrator', 'admin@admin.com', 'Bandung', '1/1/1999', 1);
