@@ -276,6 +276,13 @@ form.minimal select {
   	width: 49.5%;
 }
 
+form.minimal input[type="search"] {
+    display: inline-block;
+  	width: 30%;
+    float:right;
+    clear:both;
+}
+
 [class*='btn-'] {
 	border: none;
 	border-bottom: 2px solid rgba(0,0,0,.15);

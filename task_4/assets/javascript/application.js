@@ -46,8 +46,17 @@ $(document).ready(function() {
     });
   });
 
-  if ($(".datatable")){
+  if ($(".datatable").length > 0){
     load_table("/" + $(".datatable").attr("id") + "/index.json.php");
+
+    if ($('#search')){
+      $('#search').on('keypress', function(e) {
+        if (e.keyCode === 13) {
+          e.preventDefault();
+          load_table("/" + $(".datatable").attr("id") + "/index.json.php?search=" + $('#search').val());
+        }
+      });
+    }
   }
 });
 

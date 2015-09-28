@@ -53,9 +53,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <?php include "../header.php" ?>
 
 <div class="container">
-  <form method="post" action="new.php">
-    <button type="submit" class="btn-minimal">New</button>
-  </form>
+  <div class='form-inline'>
+    <form method="post" action="new.php">
+      <button type="submit" class="btn-minimal">New</button>
+    </form>
+    <right>
+      <form class="minimal">
+        <input type="search" id="search" placeholder="Type and enter to search">
+      </form>
+    </right>
+  </div>
   <br>
   <table class="datatable" id="mutations">
     <thead>
