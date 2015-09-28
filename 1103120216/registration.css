@@ -1,0 +1,59 @@
+@charset "utf-8";
+/* CSS Document */
+body{background-color: #c0392b;}
+
+span{
+	color:#c0392b;
+	font-family: 'Roboto', sans-serif;
+}
+
+.header{
+	text-align:center;
+	width: auto;
+	color:#FFFFFF;
+	font-size:50px;
+	margin-left:60px;
+	font-family: 'Roboto', sans-serif;
+}
+
+.regist{
+	height: 500px;
+	width: 500px;
+	background: #ecf0f1;
+	border-radius: 10px;
+	padding: 30px;
+	padding-top:10px;
+	margin-left:410px;
+	margin-top:0px;
+}
+
+input[type=text]{
+	width: 499px;
+	padding: 2px;
+	border: 1px solid #ccc;
+	padding-left: 5px;
+	font-size: 16px;
+}
+
+input[type=password] {
+	width: 499px;
+	padding: 2px;
+	border: 1px solid #ccc;
+	padding-left: 5px;
+	font-size: 16px;
+}
+
+input[type=submit]{
+	width:100px;
+	background-color:#9E9E9E;
+	color:#fff;
+	border:2px solid #9E9E9E;
+	padding:8px;
+	font-size:15px;
+	cursor:pointer;
+	border-radius:10px;
+}
+
+label{
+	font-family: 'PT Sans', sans-serif;
+}
