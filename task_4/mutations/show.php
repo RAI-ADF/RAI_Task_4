@@ -19,7 +19,7 @@ if (!isset($_GET['id'])) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Welcome</title>
+    <title>RAI - View <?php echo $data['name']; ?></title>
     <meta charset="UTF-8">
     <meta name=description content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -56,7 +56,7 @@ if (!isset($_GET['id'])) {
       <input type="hidden" name="_METHOD" value="GET" />
       <input type="hidden" name="id" value="<?php echo $data['id']; ?>" />
       <button type="submit" class="plain">Edit</button>
-    </form> | 
+    </form> |
     <form method="post">
       <input type="hidden" name="_METHOD" value="DELETE" />
       <input type="hidden" name="id" value="<?php echo $data['id']; ?>" />

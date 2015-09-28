@@ -19,7 +19,7 @@ if (!isset($_GET['id'])) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Welcome</title>
+    <title>RAI - Edit <?php echo $data['name']; ?></title>
     <meta charset="UTF-8">
     <meta name=description content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
