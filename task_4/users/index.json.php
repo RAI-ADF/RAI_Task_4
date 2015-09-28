@@ -13,8 +13,8 @@ foreach ($db->query($sql) as $raw) {
     'date' => $raw['username'],
     'type' => $raw['password'],
     'amount' => $raw['email'],
-    'note' => $raw['birthplace'],
-    'note' => $raw['birthdate']
+    'birthplace' => $raw['birthplace'],
+    'birthdate' => $raw['birthdate']
   );
 }
 echo (json_encode($data));
