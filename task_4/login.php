@@ -25,15 +25,20 @@ if(isset($_SESSION['username']) && isset($_SESSION['is_admin'])){
 
 
 <body>
-	<h1>Login Page</h1>
-	<form action="do_login.php">
-		<label for="">Username</label>
-		<input type="text" name="username">
-		<label for="">Password</label>
-		<input type="password" name="password">
-		<input type="submit" value="Login">
-	</form>
-	<a href="registration.php">Register</a>
+	<div id="login_form">
+		<form action="do_login.php">
+			<label for="">Username</label>
+			<input type="text" name="username">
+			<label for="">Password</label>
+			<input type="password" name="password">
+			<input type="submit" value="Login">
+		</form>
+		<a href="registration.php">Register</a>
+	</div>
+
+	<script type="text/javascript">
+		
+	</script>
 </body>
 
 </html>
