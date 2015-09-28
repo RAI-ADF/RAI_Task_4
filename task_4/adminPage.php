@@ -7,61 +7,7 @@
 <head>
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-	<script type="text/javascript">
-		var ajaxRequest = new XMLHttpRequest();
-		function ajaxFunctionLoadUser(){	
-			ajaxRequest.onreadystatechange = processQueryLoadUser;
-
-			ajaxRequest.open("GET", "_all_user_data.php");
-			ajaxRequest.send();
-		}
-
-		function processQueryLoadUser(){
-			if(ajaxRequest.readyState==4){
-				//alert(ajaxRequest.responseText);
-				document.getElementById('allUser').innerHTML = ajaxRequest.responseText;
-			}
-		}
-
-		function viewDetail(id){
-			//alert(id);
-			ajaxRequest.onreadystatechange = viewDetailProcess;
-
-			ajaxRequest.open("GET", "_userDetail.php?id="+id);
-			ajaxRequest.send();
-		}
-
-		function viewDetailProcess(){
-			if(ajaxRequest.readyState==4){
-				//alert(ajaxRequest.responseText);
-				document.getElementById('user-detail').innerHTML=ajaxRequest.responseText;
-			}
-		}
-
-		function closeDetail(){
-			//alert("ok");
-			document.getElementById('user-detail').innerHTML="";
-		}
-
-		function searchUser(){
-			var username = document.getElementById('username-search').value;
-
-			ajaxRequest.onreadystatechange = searchProcess;
-
-			ajaxRequest.open("GET", "_searchUser.php?username="+username);
-			ajaxRequest.send();
-		}
-
-		function searchProcess(){
-			if(ajaxRequest.readyState==4){
-				//alert(ajaxRequest.responseText);
-				if(ajaxRequest.responseText==0){
-					document.getElementById('user-detail').innerHTML="user not found";
-				}else{
-					document.getElementById('user-detail').innerHTML=ajaxRequest.responseText;
-				}
-			}
-		}
+	<script type="text/javascript" src="assets/js/adminPage.js">
 	</script>
 </head>
 <body onload="ajaxFunctionLoadUser();">
@@ -113,6 +59,7 @@
 						<tr>
 							<td>no</td>
 							<td>username</td>
+							<td>option</td>
 							<!--
 							<td>name</td>
 							<td>email</td>
