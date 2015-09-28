@@ -63,16 +63,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <?php include "header.php" ?>
 
 <section id="login-box">
-  <h1>Login</h1>
+  <h1>Register</h1>
   <form id="login" method="post" class="minimal">
     <?php if (isset($_GET['message'])) echo $_GET['message'].'<br>'; ?>
 
 
     <input type="text" name="username" id="username" placeholder="Username" required="required" />
-    <input type="password" name="password" id="password" placeholder="Password" required="required" />
-    <input id="password_confirmation" name="password_confirmation" type="password"  placeholder="Password Confirmation"required>
+    <input type="password" name="password" id="password" placeholder="Password" onkeyup="validate_password(); return false;" required="required" />
+    <input id="password_confirmation" name="password_confirmation" type="password"  placeholder="Password Confirmation" onkeyup="validate_password(); return false;" required>
     <input id="name" name="name" type="text" placeholder="Name">
-    <input id="email" name="email" type="text" placeholder="Email">
+    <input id="email" name="email" type="text" onkeyup="validate_email(); return false;" placeholder="Email">
     <input id="birthplace" name="birthplace" type="text" placeholder="birthplace">
     <input id="birthdate" name="birthdate" type="text" class="date" placeholder="Birthdate">
     <button type="submit" class="btn-minimal">Register</button>

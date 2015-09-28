@@ -35,3 +35,27 @@ $(document).ready(function() {
     changeYear: true
   });
 });
+
+function validate_password()
+{
+    var pass1 = document.getElementById('password');
+    var pass2 = document.getElementById('password_confirmation');
+
+    if(pass1.value == pass2.value){
+        pass2.style.backgroundColor = "#fff";
+    }else{
+        pass2.style.backgroundColor = "#ff6666";
+    }
+}
+
+function validate_email()
+{
+    var format = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+    var email = document.getElementById('email');
+
+    if(email.value.match(format)){
+        email.style.backgroundColor = "#fff";
+    }else{
+        email.style.backgroundColor = "#ff6666";
+    }
+}
