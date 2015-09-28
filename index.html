@@ -1,0 +1,60 @@
+<html>
+<head>
+	<title>Login Form</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<link rel="stylesheet" href="styles.css">
+	<link rel="shortcut icon" href="form.jpg">
+	
+	<script type="text/javascript">
+		$(document).ready(function(){
+		$('#submit').click(function(){
+		var username=$('#user').val();
+		var password=$('#pass').val();
+
+		if(username==""){
+		$('#dis').slideDown().html("<span>Please type Username</span>");
+		return false;
+		}
+		if(password==""){
+		$('#dis').slideDown().html('<span id="error">Please type Password</span>');
+		return false;
+		}
+		});
+		});
+	</script>
+	
+		<script type="text/javascript" language="javascript">
+			$(document).ready(function() {
+			$("#driver").click(function(event){
+			var name = $("#user").val();
+			$.post(
+				'/jquery/result.php', 
+				{"user":user}, 
+				callbackFunction);
+			});
+			});
+
+			function callbackFunction(data) {
+			alert( "Data Loaded: " + data );
+			}
+		</script>
+			
+</head>
+
+<body bgcolor="#E5E5E5">
+<center>
+	<div style="margin-top:100px">
+	<fieldset style="width:250px;">
+		<form method="post" action="index.php">
+			Login Form
+
+			<label id="dis"></label><br>
+			Username: <input type="text" name="user" id="user" /><br />
+			Password: <input type="password" name="pass" id="pass" /><br /><br />
+			<center><input type="submit" name="submit" id="submit" href='coba.html'/></center>
+		</form>
+	</fieldset>
+	</div>
+</center>
+</body>
+</html>
