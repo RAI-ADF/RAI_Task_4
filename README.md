@@ -1,3 +1,8 @@
+# Running
+```bash
+cd task_4/ && php -S localhost:8000
+```
+
 # RAI_Task_4
 PHP, Javascript, AJAX, jQuery
 
