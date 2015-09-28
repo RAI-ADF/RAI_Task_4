@@ -2,7 +2,7 @@
 include('connect.php');
 session_start();
 if ($_SESSION['username'] != 'admin'){
-
+	
 }else{
 	header("Location: index.php");
 }
@@ -78,7 +78,7 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
-    <div class="nav">
+	<div class="nav" style="background-color: #c6e2ff";>
       <div class="container">
         <ul class="pull-left">
           <li>welcome <? echo @$_SESSION['username'];?></?></li>

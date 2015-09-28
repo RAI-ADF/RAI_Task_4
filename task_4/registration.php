@@ -1,5 +1,9 @@
 <?php 
 include('navbar.php');
+include('connect.php');
+
+
+
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -10,17 +14,30 @@ include('navbar.php');
 
 <link href="asset/form_style.css" rel="stylesheet" type="text/css" />
 <link href="asset/main.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="asset/jquery-1.11.3.min.js"></script>
 
-<script type="text/javascript">
-	function login(){
-	var name=document.getElementById("name").value;
-	var password=document.getElementById("password").value;
-	console.log(name);
-	console.log(password);
-	alert(name);
-	alert(password);
-	
-	}
+<script>
+$(document).ready(function(){
+
+		$("#submit").click(function(){
+			password1=$("#password1").val();
+			password2=$("#password2").val();
+			username=$("#username").val();
+			if(password1 === password2){
+			$.ajax({
+			type: "POST",
+			url: "reg_proses.php",
+			data: "username="+username+"&password1="+password1,
+			success: function(html){    
+			 
+		   },
+		  });
+			//console.log("password sama");
+			}else{
+			alert("password tidak sama");
+			}
+		});
+});
 </script>
 </head>
 <body>
@@ -55,19 +72,20 @@ include('navbar.php');
 	</label>
     <label>
         <span>Username</span>
-        <input id="name" type="text" name="username" placeholder="Username" />
+		<input  type="text" id="username" name="username" placeholder="Username" />
     </label>
     <label>
         <span>Password</span>
-        <input id="password" type="text" name="password" placeholder="Password" />
+		<input  type="password" id="password1" name="password" placeholder="Password" />
     </label>
+	</br>
     <label>
 		<span>Re-type Password</span>
-        <input id="password" type="text" name="password" placeholder="Password" />
+		<input  type="password" id="password2" name="password" placeholder="Password" />
     </label> 	
         <span>&nbsp;</span> 
 		</br>
-		<input style="margin-left: 230px;" type="button" class="button" value="Send" onclick=login() /> 
+		<input style="margin-left: 230px;" id="submit" type="button" class="button" value="Send"  /> 
        
 </form>
 
