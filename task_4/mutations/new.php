@@ -1,11 +1,12 @@
 <?php
-require_once('authenticate.php');
+include '../authenticate.php';
+$data = null;
+$action = 'POST';
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>RAI - Home</title>
+    <title>RAI - New mutation</title>
     <meta charset="UTF-8">
     <meta name=description content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,15 +16,14 @@ require_once('authenticate.php');
     <script src="/assets/javascript/jquery-ui.min.js"></script>
     <script src="/assets/javascript/application.js"></script>
 </head>
-<body>
-  <?php include "header.php" ?>
 
-  <div class="container">
-    <span><?php echo $_GET["message"] ?></span>
-    <p id="center">
-      Welcome, Please select menu from navigation above!
-    </p>
-  </div>
+<body>
+<?php include "../header.php" ?>
+
+<div class="container">
+  <span><?php echo $_GET["message"] ?></span>
+  <h2>New Mutation</h2>
+  <?php include '_form.php'; ?>
 </div>
 </body>
 </html>
