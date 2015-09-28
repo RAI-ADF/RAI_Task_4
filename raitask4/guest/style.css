@@ -1,0 +1,219 @@
+@charset "UTF-8";
+/* CSS Document */
+@import http://fonts.googleapis.com/css?family=Raleway;
+
+#main {
+	width:960px;
+	margin:150px auto;
+	font-family:"Myriad Pro", "Trebuchet MS", sans-serif;
+}
+
+span.error {
+	color:red;
+	margin-left:38px;
+}
+
+span {
+	color:#009688;
+	font-family:"Myriad Pro", "Trebuchet MS", sans-serif;
+}
+
+aside {
+	float: right;
+	margin-right: 180px;
+	margin-top: 70px;
+}
+h2 {
+	background-color:#FEFFED;
+	text-align:center;
+	border-radius:10px 10px 0 0;
+	margin:-10px -40px;
+	padding:15px
+}
+
+hr {
+	border:0;
+	border-bottom:1px solid #ccc;
+	margin:10px -40px;
+	margin-bottom:30px
+}
+
+
+#loginform {
+	width: 435px;
+	height: 400px;
+	float: center;
+	border-radius: 10px;
+	background-color: white;
+	font-family: "Myriad Pro", "Trebuchet MS", sans-serif;
+	border: 1px solid #ccc;
+	padding: 10px 30px 5px;
+	margin-top: 79px;
+	margin-left: 55px
+}
+
+input[type=text],
+input[type=password] {
+	width: 275px;
+	padding: 10px;
+	margin-top: 8px;
+	border: 1px solid #ccc;
+	padding-left: 5px;
+	font-size: 16px;
+	font-family: "Myriad Pro", "Trebuchet MS", sans-serif;
+	margin-top: 10px
+}
+
+input[type=text1] {
+	width: 150px;
+	border: 1px solid #ccc;
+	font-size: 13px;
+	font-family: "Myriad Pro", "Trebuchet MS", sans-serif;
+}
+
+input[type=regis] {
+	width: 350px;
+	padding: 10px;
+	margin-top: 8px;
+	border: 1px solid #ccc;
+	padding-left: 5px;
+	font-size: 13px;
+	font-family: "Myriad Pro", "Trebuchet MS", sans-serif;
+
+}
+
+input[type=submit], 
+input[type=button] {
+	width:275px;
+	background-color:#009688;
+	color:#fff;
+	border:2px solid #009688;
+	padding:8px;
+	font-size:15px;
+	cursor:pointer;
+	border-radius:10px;
+	margin-bottom:2px;
+	margin-top:8px
+}
+
+input[type=signup] {
+	width:275px;
+	background-color:#009688;
+	color:#fff;
+	border:2px solid #009688;
+	padding:8px;
+	font-size:15px;
+	cursor:pointer;
+	border-radius:10px;
+	margin-bottom:2px;
+	text-align:center;
+	margin-top:8px
+}
+
+#profile {
+	padding:10px;
+	border:1px;
+	font-size:15px;
+	/*background-color:#B2DFDB*/
+}
+			
+#logout {
+	padding:2px;
+	margin: center;
+	font-family:"Myriad Pro", "Trebuchet MS", sans-serif;
+}
+
+a {
+	text-decoration:none;
+	color:black
+}
+
+i {
+	color:#009688
+}
+
+body {
+	margin:0;
+	font-family:"Myriad Pro", "Trebuchet MS", sans-serif;
+	font-size:15px;
+	background-color:#333333;
+	background-size:100%;
+	border-style:none;
+}
+
+#page {
+	background: black;
+	margin:0 auto;
+	width:100%;
+	height:100%;
+}
+
+#halamanbawah {
+	height:1000px;
+	margin-top:50px;
+}
+
+.horizon-menubawah {
+	list-style-type: none;
+	margin-top:50px;
+	padding: 100px;
+}
+
+.demo-container {
+	margin:10px;
+}
+
+.horizon-menu {
+	list-style-type: none;
+	padding: 10px;
+	border-radius: 5px;
+	background-color: gainsboro;
+}
+
+.horizon-menu a {
+	text-decoration:none;
+	color:white;
+	font-weight:bold
+}
+
+.horizon-menu li {
+	display:inline;
+	margin:5px 0
+}
+
+.horizon-menu li:before {
+	content:' | ';
+	color:rgba(0,0,0,.1)
+}
+	
+.horizon-menu li:first-child:before {
+	content:' '
+}
+
+.horizon-menu li a {
+	margin-right:10px;
+	margin-left:10px;
+	padding:10px;
+	border-radius:5px;
+}
+
+.horizon-menu li a:hover {
+	background-color: gainsboro;
+}
+	
+#isi {
+	font-family: "Futura";
+	color: black;
+}
+	
+.marginkanankiri {
+	margin-left:200px;
+	margin-right:200px;
+}
+
+*, *:after, *:before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+
+}
