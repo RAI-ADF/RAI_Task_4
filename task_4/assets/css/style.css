@@ -391,6 +391,10 @@ button:hover {
 
 @media only screen and (max-width: 600px),
 (min-device-width: 768px) and (max-device-width: 1024px)  {
+  form.minimal input[type="search"] {
+    	width: 60%;
+  }
+
   .container{
     margin: 10px auto;
     width:95%;

@@ -57,11 +57,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <form method="post" action="new.php">
       <button type="submit" class="btn-minimal">New</button>
     </form>
-    <right>
-      <form class="minimal">
-        <input type="search" id="search" placeholder="Type and enter to search">
-      </form>
-    </right>
+    <form class="minimal">
+      <input type="search" id="search" placeholder="Type and enter to search">
+    </form>
   </div>
   <br>
 
