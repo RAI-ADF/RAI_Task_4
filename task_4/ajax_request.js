@@ -21,5 +21,8 @@ function create_ajax_request(method, url, data, on_success, on_fail) {
 	};
 
 	ajaxRequest.open(method, url, true);
+	if(method == "post"){
+		ajaxRequest.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	}
 	ajaxRequest.send(data);
 }
