@@ -18,13 +18,18 @@
 	$username = mysql_real_escape_string($username);
 	$password = mysql_real_escape_string($password);
 	// Selecting Database
-	$db = mysql_select_db("company", $connection);
+	$db = mysql_select_db("database", $connection);
 	// SQL query to fetch information of registerd users and finds user match.
-	$query = mysql_query("select * from login where password='$password' AND username='$username'", $connection);
-	$rows = mysql_num_rows($query);
-	if ($rows == 1) {
+	$queryAdmin = mysql_query("select * from admin where password='$password' AND username='$username'", $connection);
+	$queryUser = mysql_query("select * from user where password='$password' AND username='$username'", $connection);
+	if (mysql_num_rows($queryAdmin) == 1) {
 		$_SESSION['login_user']=$username; // Initializing Session
-		header("location: profile.php"); // Redirecting To Other Page
+		header("location: adminPage.php"); // Redirecting To Other Page
+		break;
+	} else if(mysql_num_rows($queryUser)){
+		$_SESSION['login_user']=$username; // Initializing Session
+		header("location: clientPage.php"); // Redirecting To Other Page
+		break;		
 	} else {
 		$error = "Username or Password is invalid";
 	}
