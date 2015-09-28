@@ -17,7 +17,13 @@ if(isset($_GET['delete_id']))
  mysql_query($sql_query); 
  header("Location: $_SERVER[PHP_SELF]");
 }
-// kondisi untuk men-delete_id
+
+//kondisi untuk logout
+if(isset($_POST['btn-logout']))
+{
+ header("Location: index.php");
+}
+
 ?>
 
 <html>
@@ -85,14 +91,15 @@ function delete_id(id)
         <td><?php echo $row[6]; ?></td>
   <td align="center"><a href="javascript:edt_id('<?php echo $row[0]; ?>')"><img src="asset/b_edit.png" align="EDIT" /></a></td>
         <td align="center"><a href="javascript:delete_id('<?php echo $row[0]; ?>')"><img src="asset/b_delete.png" align="HAPUS" /></a></td>
-        </tr>
+        </tr>       
+
         <?php
  }
  ?>
     </table>
     </div>
+<a href = "logout.php"><button><strong>Logout</strong></button></a>
 </div>
-<a href="logout.php">Log Out</a>
 </center>
 </body>
 </html>
