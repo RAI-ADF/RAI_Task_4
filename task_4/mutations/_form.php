@@ -1,36 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Welcome</title>
-    <meta charset="UTF-8">
-    <meta name=description content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="/assets/javascript/application.js"></script>
-</head>
+<form action="../mutations/index.php" method="post" class="minimal">
+  <input type="hidden" name="_METHOD" value="<?php echo $action; ?>" />
+  <input type="hidden" name="id" value="<?php echo $data['id']; ?>" />
 
-<body>
-  <?php include "../header.php" ?>
-  <form action="../mutations/index.php" method="post">
-    <input type="hidden" name="_METHOD" value="<?php echo $action; ?>" />
-    <input type="hidden" name="id" value="<?php echo $data['id']; ?>" />
-    Name:<br>
+  <label name="name">Name
     <input type="text" name="name" value="<?php echo $data['name']; ?>">
-    <br>
-    Date:<br>
+  </label>
+
+  <label name="date">Date
     <input type="text" name="date" value="<?php echo $data['date']; ?>">
-    <br>
-    Type:<br>
+  </label>
+
+  <label name="type">Type
     <input type="text" name="type" value="<?php echo $data['type']; ?>">
-    <br>
-    Amount:<br>
+  </label>
+
+  <label name="amount">Amount
     <input type="text" name="amount" value="<?php echo $data['amount']; ?>">
-    <br>
-    Note:<br>
-    <input type="text" name="note" value="<?php echo $data['note']; ?>">
-    <br>
-    <input type="submit" value="Save">
-  </form>
-</body>
-</html>
+  </label>
+
+  <label name="note">Note
+    <textarea name="note"><?php echo $data['note']; ?></textarea>
+  </label>
+
+  <button type="submit" class="btn-minimal">Save</button>
+</form>

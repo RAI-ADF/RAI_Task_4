@@ -301,7 +301,7 @@ form.minimal textarea {
 }
 
 .btn-minimal:hover {
-	background-color: #4195fc;
+	background-color: rgb(140, 193, 193);
 	border: 1px solid rgba(0,0,0,.1);
 	color: rgb(255,255,255);
 	cursor: pointer;
@@ -354,7 +354,7 @@ td {
     padding: 5px;
 }
 
-button {
+button.plain {
      background:none!important;
      border:none;
      padding:0!important;
