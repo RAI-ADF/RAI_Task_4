@@ -34,6 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   header("Location: index.php?message".$message);
 } else {
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,10 +42,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta name=description content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="/assets/javascript/application.js"></script>
 </head>
+
 <body>
-  <table class="table">
+<?php include "../header.php" ?>
+
+<div class="container">
+  <table class="table" id="users">
     <thead>
       <tr>
         <th>ID</th>
@@ -54,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <th>Email</th>
         <th>Birthplace</th>
         <th>Birthdate</th>
-        <th colspan="3">Action</th>
+        <th>Action</th>
       </tr>
     </thead>
     <tbody>
@@ -75,21 +82,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           <form action="show.php">
             <input type="hidden" name="_METHOD" value="GET" />
             <input type="hidden" name="id" value="<?php echo $data['id']; ?>" />
-            <input type="submit" value="Show">
+            <button type="submit">Show</button>
           </form>
-        </td>
-        <td>
           <form action="edit.php">
             <input type="hidden" name="_METHOD" value="GET" />
             <input type="hidden" name="id" value="<?php echo $data['id']; ?>" />
-            <input type="submit" value="Edit">
+            <button type="submit">Edit</button>
           </form>
-        </td>
-        <td>
           <form method="post">
             <input type="hidden" name="_METHOD" value="DELETE" />
             <input type="hidden" name="id" value="<?php echo $data['id']; ?>" />
-            <input type="submit" value="Delete">
+            <button type="submit">Delete</button>
           </form>
         </td>
         <?php

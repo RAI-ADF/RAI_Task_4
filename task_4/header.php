@@ -5,9 +5,9 @@
   </div>
   <nav>
     <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Mutations</a></li>
-      <li><a href="#">Users</a></li>
+      <li><a href="/index.php">Home</a></li>
+      <li><a href="/mutations/index.php">Mutations</a></li>
+      <li><a href="/users/index.php">Users</a></li>
       <li>
         <a href="#">Welcome User
           <span class="toggle">Expand</span>

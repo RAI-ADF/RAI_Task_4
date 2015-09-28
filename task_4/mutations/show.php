@@ -16,12 +16,29 @@ if (!isset($_GET['id'])) {
 }
 ?>
 
-Name: <?php echo $data['name']; ?>
-<br>
-Date: <?php echo $data['date']; ?>
-<br>
-Type: <?php echo $data['type']; ?>
-<br>
-Amount: <?php echo $data['amount']; ?>
-<br>
-Note: <?php echo $data['note']; ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Welcome</title>
+    <meta charset="UTF-8">
+    <meta name=description content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="/assets/javascript/application.js"></script>
+</head>
+
+<body>
+  <?php include "../header.php" ?>
+
+  Name: <?php echo $data['name']; ?>
+  <br>
+  Date: <?php echo $data['date']; ?>
+  <br>
+  Type: <?php echo $data['type']; ?>
+  <br>
+  Amount: <?php echo $data['amount']; ?>
+  <br>
+  Note: <?php echo $data['note']; ?>
+</body>
+</html>

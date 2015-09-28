@@ -321,51 +321,108 @@ section#login-help p {
   text-align: center;
 }
 
-div#welcome {
-  margin: 200px auto;
+.container{
+  display:block;
+  width:80%;
+  padding:25px;
+  margin: 100px auto;
+  background-color: white;
+  border-radius: 1px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
 }
 
-div#welcome p {
+.container p {
   text-align: center;
 }
 
-/* Attribute selector */
-[class*='col-'] {
-  float: left;
-  padding: 10px;
+table, th, td {
+    border: 1px solid #eee;
+    text-align: center;
 }
 
-/* Main Widths */
-.col-1 {width: 10%; }
-.col-2 {width: 20%; }
-.col-3 {width: 30%; }
-.col-4 {width: 40%; }
-.col-5 {width: 50%; }
-.col-6 {width: 60%; }
-.col-7 {width: 70%; }
-.col-8 {width: 80%; }
-.col-9 {width: 90%; }
-.col-10 {width: 100%; }
-
-/*base mobile styles - everything 100%*/
-@media (max-width: 480px) {
-  .col-1,
-  .col-2,
-  .col-3,
-  .col-4,
-  .col-5,
-  .col-6,
-  .col-7,
-  .col-8,
-  .col-9,
-  .col-10{
+table {
+    border-collapse: collapse;
     width: 100%;
-  }
 }
 
-/* Clearfix */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
+th {
+  height: 50px;
+  background-color: rgb(140, 193, 193);
+}
+
+td {
+    padding: 5px;
+}
+
+button {
+     background:none!important;
+     border:none;
+     padding:0!important;
+     font: inherit;
+     cursor: pointer;
+}
+
+button:hover {
+  color: rgb(140, 193, 193);
+}
+
+@media only screen and (max-width: 600px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+  .container{
+    margin: 10px auto;
+    width:95%;
+  }
+
+  /* Force table to not be like tables anymore */
+  table, thead, tbody, th, td, tr {
+      display: block;
+  }
+
+  /* Hide table headers (but not display: none;, for accessibility) */
+  thead tr {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+  }
+
+  tr { border: 1px solid #ccc; }
+
+  td {
+      /* Behave  like a "row" */
+      border: none;
+      border-bottom: 1px solid #eee;
+      position: relative;
+      padding-left: 50%;
+  }
+
+  td:before {
+      /* Now like a table header */
+      position: absolute;
+      /* Top/left values mimic padding */
+      top: 6px;
+      left: 6px;
+      width: 45%;
+      padding-right: 10px;
+      white-space: nowrap;
+  }
+
+  /*
+  Label the data
+  */
+  #mutations td:nth-of-type(1):before { content: "ID"; }
+  #mutations td:nth-of-type(2):before { content: "Name"; }
+  #mutations td:nth-of-type(3):before { content: "Date"; }
+  #mutations td:nth-of-type(4):before { content: "Type"; }
+  #mutations td:nth-of-type(5):before { content: "Amount"; }
+  #mutations td:nth-of-type(6):before { content: "Note"; }
+  #mutations td:nth-of-type(7):before { content: "Action"; }
+
+  #users td:nth-of-type(1):before { content: "ID"; }
+  #users td:nth-of-type(2):before { content: "Name"; }
+  #users td:nth-of-type(3):before { content: "Username"; }
+  #users td:nth-of-type(4):before { content: "Password"; }
+  #users td:nth-of-type(5):before { content: "Email"; }
+  #users td:nth-of-type(6):before { content: "Birthplace"; }
+  #users td:nth-of-type(7):before { content: "Birthdate"; }
+  #users td:nth-of-type(8):before { content: "Action"; }
 }
