@@ -343,8 +343,8 @@ section#login-help p {
   padding:25px;
   margin: 100px auto;
   background-color: white;
-  border-radius: 1px;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+	box-shadow: 0 1px 0 rgba(255,255,255,0.2) inset, 0 0 4px rgba(0,0,0,0.2);
 }
 
 .container p#center {
