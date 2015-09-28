@@ -68,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   </form>
 </section>
 <section id="login-help">
-  <p>Don't have account? <a href="#">Click here to register.</a></p>
+  <p>Don't have account? <a href="registration.php">Click here to register</a></p>
 </section>
 
 </body>

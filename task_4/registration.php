@@ -45,6 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   }
 } else {
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,34 +54,33 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta name=description content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="assets/javascript/application.js"></script>
+    <!--HTML 5 + IE HACK--><!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 </head>
 
-<h1>Login</h1>
-<form id="login" method="post">
-  <?php if (isset($_GET['message'])) echo $_GET['message'].'<br>'; ?>
-  <label for="username">Username:</label><br>
-  <input id="username" name="username" type="text" required><br>
+<?php include "header.php" ?>
 
-  <label for="password">Password:</label><br>
-  <input id="password" name="password" type="password" required><br>
+<section id="login-box">
+  <h1>Login</h1>
+  <form id="login" method="post" class="minimal">
+    <?php if (isset($_GET['message'])) echo $_GET['message'].'<br>'; ?>
 
-  <label for="password_confirmation">Password Confirmation:</label><br>
-  <input id="password_confirmation" name="password_confirmation" type="password" required><br>
 
-  <label for="name">Name::</label><br>
-  <input id="name" name="name" type="name"><br>
+    <input type="text" name="username" id="username" placeholder="Username" required="required" />
+    <input type="password" name="password" id="password" placeholder="Password" required="required" />
+    <input id="password_confirmation" name="password_confirmation" type="password"  placeholder="Password Confirmation"required>
+    <input id="name" name="name" type="text" placeholder="Name">
+    <input id="email" name="email" type="text" placeholder="Email">
+    <input id="birthplace" name="birthplace" type="text" placeholder="birthplace">
+    <input id="birthdate" name="birthdate" type="text" placeholder="Birthdate">
+    <button type="submit" class="btn-minimal">Register</button>
+  </form>
+</section>
 
-  <label for="email">Email:</label><br>
-  <input id="email" name="email" type="text"><br>
-
-  <label for="birthplace">Birthplace:</label><br>
-  <input id="birthplace" name="birthplace" type="text"><br>
-
-  <label for="birthdate">Birthdate:</label><br>
-  <input id="birthdate" name="birthdate" type="text"><br>
-
-  <input type="submit" value="Register">
-</form>
+<section id="login-help">
+  <p>Have account? <a href="login.php">Click here to login</a></p>
+</section>
 
 </body>
 </html>
