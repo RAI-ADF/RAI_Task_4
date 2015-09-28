@@ -1,0 +1,98 @@
+body {
+	margin:0;
+	font-family:"Myriad Pro", "Trebuchet MS", sans-serif;
+	font-size:15px;
+  background-image: url(background.jpg);
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: auto;
+}
+
+#main {
+	width:960px;
+	margin:150px auto;
+}
+
+span {
+	color:red;
+	margin-left:38px;
+}
+
+h1 {
+	text-align:center;
+  font-size: 25px;
+  color: #993b3b;
+}
+
+p {
+	font-size: 18px;
+  color: #993b3b;
+	margin-bottom: 0px;
+	margin-left: 5px;
+}
+
+#login {
+	width:320px;
+	float:left;
+	border-radius:10px;
+	background-color:white;
+	border:1px solid #ccc;
+	padding:10px 20px 10px;
+	margin-top:10px;
+	margin-left:320px
+}
+
+#form {
+	width: 305px;
+  height: 10px;
+	padding: 10px;
+	border: 1px solid #ccc;
+	padding-left: 5px;
+	font-size: 16px;
+}
+
+#datepicker {
+	width: 305px;
+  height: 10px;
+	padding: 10px;
+	border: 1px solid #ccc;
+	padding-left: 5px;
+	font-size: 16px;
+}
+
+#logB, #regB, #signup {
+	width:320px;
+	background-color:#993b3b;
+	color:#fff;
+	border:2px solid #993b3b;
+	padding:8px;
+	font-size:15px;
+	cursor:pointer;
+	border-radius:10px;
+	margin-bottom:2px;
+	margin-top:8px
+}
+
+#profile {
+	margin:300px;
+	padding: 50px;
+	border:1px;
+	font-size:15px;
+	border-radius:10px;
+	background-color:white;
+	border:1px solid #ccc;
+}
+
+#logout {
+	padding:2px;
+	margin: center;
+}
+
+a {
+	text-decoration:none;
+	color:black;
+}
+
+i {
+	color:#993b3b;
+}
