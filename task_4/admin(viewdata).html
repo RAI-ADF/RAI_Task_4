@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link type="text/css" rel="stylesheet" href="login.css"/>
+<script type="text/javascript" src="login.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    function showRoom(){
+        $.ajax({
+            type:"POST",
+            url:"process.php",
+            data:{action:showroom},
+            success:function(data){
+                $("#content").html(data);
+            }
+        });
+    }
+    showRoom();
+});
+</script>
+</head>
+<body>
+<div class="form">
+      
+      <ul class="tab-group">
+        <li class="tab active"><a href="admin(viewdata).html">View Data</a></li>
+        <li class="tab"><a href="admin(viewuser).html">View User</a></li>
+      </ul>
+      
+        <div id="viewdata">   
+          <h1>View Data</h1>
+          <?php
+	if(!mysql_connect("127.0.0.1","root",""))
+	{
+     die('oops connection problem ! --> '.mysql_error());
+	}
+	if(!mysql_select_db("db_task4"))
+	{
+     die('oops database selection problem ! --> '.mysql_error());
+	}
+
+	$action=$_POST["action"];
+	if($action=="showroom"){
+    $query="SELECT * FROM registrasi";
+    $show=mysqli_query($link,$query) or die ("Error");
+    while($row=mysqli_fetch_array($show)){
+        echo "<li>$row['name']</li>";
+    }
+}
+?>
+          
+	
+          </form>
+
+        </div>
+        
+      </div><!-- tab-content -->
+      
+</div> <!-- /form -->
+</body>
+</html>
