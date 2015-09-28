@@ -15,7 +15,7 @@
         </a>
         <nav>
           <ul>
-            <li><a href="#">Logout</a></li>
+            <li><a href="/login.php?logout">Logout</a></li>
           </ul>
         </nav>
       </li>

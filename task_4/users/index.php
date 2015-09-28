@@ -53,6 +53,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <?php include "../header.php" ?>
 
 <div class="container">
+  <form method="post" action="new.php">
+    <button type="submit" class="btn-minimal">New</button>
+  </form>
+  <br>
+
   <table class="table" id="users">
     <thead>
       <tr>

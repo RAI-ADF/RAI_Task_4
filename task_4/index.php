@@ -22,6 +22,9 @@ require_once('authenticate.php');
     <p id="center">
       Welcome User, your balance is Rp. 1000
     </p>
+
+    <h2>New Mutation</h2>
+    <?php include 'clientPage.php' ?>
   </div>
 </div>
 </body>
