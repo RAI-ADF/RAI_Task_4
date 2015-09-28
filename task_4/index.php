@@ -1,15 +1,68 @@
 <?php
 session_start();
- 
 
+if (!empty($_SESSION['username'])) {
+        header('location:clientPage.php');
+}
 ?>
+
 <html>
 <head>
-<title>LOGIN</title>
+    <title>LOGIN</title>
+<style>
+body {
+    background-color: #d0e4fe;
+}
+
+h1 {
+    color: orange;
+    text-align: left;
+}
+
+p {
+    font-family: "Times New Roman";
+    font-size: 20px;
+}
+</style>
+
+
+<style>
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    float: left;
+}
+
+a:link, a:visited {
+    display: block;
+    width: 125px;
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: #98bf21;
+    text-align: center;
+    padding: 4px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+a:hover, a:active {
+    background-color: #7A991A;
+}
+</style>
 </head>
- 
+
 <body>
-<h1>LOGIN</h1>
+ <ul>
+  <li><a href="index.php">Sign In</a></li>
+  <li><a href="registration.php">Sign Up</a></li>  
+</ul>
+
+<h1 align="left">Sign In</h1>
  <?php
 if (!empty($_GET['message']) && $_GET['message'] == 'success') {
     echo '<h3>Registrasi berhasil, silahkan login!</h3>';
@@ -30,7 +83,9 @@ if (!empty($_GET['error'])) {
     }
 }
 ?>
- 
+
+
+
 <form name="login" action="otentikasi.php" method="post">
 <form name="registrasi" action="index.php" method="post">
 <table border="0" cellpadding="5" cellspacing="0">
@@ -44,16 +99,15 @@ if (!empty($_GET['error'])) {
         <td>:</td>
         <td><input type="password" name="password" /></td>
     </tr>
-	<tr align="left">
-        <td colspan="2">
-            <a href="registrasi.php">Daftar</a>
-        </td>
-        <td colspan="3">
-			<input type="submit" name="login" value="Login" />
-		</td>     
+    <tr align="left">        
+       <td align="right" colspan="3">               
+            <input type="submit" name="login" value="Login" />
+        </td>     
     </tr>
 </table>
 </form>
 
 </body>
 </html>
+
+

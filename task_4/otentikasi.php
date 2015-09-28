@@ -27,20 +27,19 @@ if (empty($username) && empty($password)) {
 }
  
 $q = mysql_query("select * from admin where username='$username' and password='$password'");
- 
+$c = mysql_query("select * from client where username='$username' and password='$password'");
 if (mysql_num_rows($q) == 1) {
 	$_SESSION['username'] = $username;
-    //kalau username dan password sudah terdaftar di database
-	if ($_SESSION['username'] == "admin"){
+    //kalau username dan password sudah terdaftar di database	
 		header('location:adminPage.php');
-		break;
-	}
-	else{
-		header('location:clientPage.php');
-		break;
-	}
-} else {
-    //kalau username ataupun password tidak terdaftar di database
+		break;	
+} else if (mysql_num_rows($c) == 1) {
+    $_SESSION['username'] = $username;
+    //kalau client yang login
+        header('location:clientPage.php');
+        break;    
+} else{
+//kalau username ataupun password tidak terdaftar di database
     header('location:index.php?error=4');
 }
 ?>
