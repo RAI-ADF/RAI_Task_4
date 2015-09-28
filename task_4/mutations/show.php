@@ -24,21 +24,45 @@ if (!isset($_GET['id'])) {
     <meta name=description content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/css/style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="/assets/javascript/jquery.min.js"></script>
     <script src="/assets/javascript/application.js"></script>
 </head>
 
 <body>
-  <?php include "../header.php" ?>
+<?php include "../header.php" ?>
 
-  Name: <?php echo $data['name']; ?>
+<div class="container">
+  <h2><?php echo $data['name']; ?></h2>
+
+  <b>Name:</b>
+  <p><?php echo $data['name']; ?></p>
   <br>
-  Date: <?php echo $data['date']; ?>
+  <b>Date:</b>
+  <p><?php echo $data['date']; ?></p>
   <br>
-  Type: <?php echo $data['type']; ?>
+  <b>Type:</b>
+  <p><?php echo $data['type']; ?></p>
   <br>
-  Amount: <?php echo $data['amount']; ?>
+  <b>Amount:</b>
+  <p><?php echo $data['amount']; ?></p>
   <br>
-  Note: <?php echo $data['note']; ?>
+  <b>Note:</b>
+  <p><?php echo $data['note']; ?></p>
+
+  <br><br>
+
+  <div class="form-inline">
+    <form action="edit.php">
+      <input type="hidden" name="_METHOD" value="GET" />
+      <input type="hidden" name="id" value="<?php echo $data['id']; ?>" />
+      <button type="submit" class="plain">Edit</button>
+    </form> | 
+    <form method="post">
+      <input type="hidden" name="_METHOD" value="DELETE" />
+      <input type="hidden" name="id" value="<?php echo $data['id']; ?>" />
+      <button type="submit" class="plain">Delete</button>
+    </form>
+  </div>
+</div>
 </body>
 </html>

@@ -313,6 +313,16 @@ form.minimal textarea {
 	text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.25);
 }
 
+.form-inline form,
+.form-inline form div {
+    display: inline;
+}
+
+.form-inline button {
+    display: inline;
+    vertical-align: middle;
+}
+
 section#login-help {
   margin: 20px auto;
 }
@@ -331,7 +341,7 @@ section#login-help p {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
 }
 
-.container p {
+.container p#center {
   text-align: center;
 }
 

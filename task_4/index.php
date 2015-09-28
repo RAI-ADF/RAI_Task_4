@@ -17,7 +17,7 @@ require_once('authenticate.php');
   <?php include "header.php" ?>
 
   <div class="container">
-    <p>
+    <p id="center">
       Welcome User, your balance is Rp. 1000
     </p>
   </div>

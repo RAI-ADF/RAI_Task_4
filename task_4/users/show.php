@@ -16,14 +16,56 @@ if (!isset($_GET['id'])) {
 }
 ?>
 
-Name: <?php echo $data['username']; ?>
-<br>
-Password: <?php echo $data['password']; ?>
-<br>
-Name: <?php echo $data['name']; ?>
-<br>
-Email: <?php echo $data['email']; ?>
-<br>
-Birthplace: <?php echo $data['birthplace']; ?>
-<br>
-Birthdate: <?php echo $data['birthdate']; ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Welcome</title>
+    <meta charset="UTF-8">
+    <meta name=description content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="/assets/javascript/jquery.min.js"></script>
+    <script src="/assets/javascript/application.js"></script>
+</head>
+
+<body>
+<?php include "../header.php" ?>
+
+<div class="container">
+  <h2><?php echo $data['name']; ?></h2>
+
+  <b>Name:</b>
+  <p><?php echo $data['username']; ?></p>
+  <br>
+  <b>Password:</b>
+  <p><?php echo $data['password']; ?></p>
+  <br>
+  <b>Name:</b>
+  <p><?php echo $data['name']; ?></p>
+  <br>
+  <b>Email:</b>
+  <p><?php echo $data['email']; ?></p>
+  <br>
+  <b>Birthplace:</b>
+  <p><?php echo $data['birthplace']; ?></p>
+  <br>
+  <b>Birthdate:</b>
+  <p><?php echo $data['birthdate']; ?></p>
+
+  <br><br>
+
+  <div class="form-inline">
+    <form action="edit.php">
+      <input type="hidden" name="_METHOD" value="GET" />
+      <input type="hidden" name="id" value="<?php echo $data['id']; ?>" />
+      <button type="submit" class="plain">Edit</button>
+    </form> |
+    <form method="post">
+      <input type="hidden" name="_METHOD" value="DELETE" />
+      <input type="hidden" name="id" value="<?php echo $data['id']; ?>" />
+      <button type="submit" class="plain">Delete</button>
+    </form>
+  </div>
+</div>
+</body>
+</html>

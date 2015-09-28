@@ -77,21 +77,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo '<td>'. $data['note'] . '</td>';
         ?>
         <td>
-          <form action="show.php">
-            <input type="hidden" name="_METHOD" value="GET" />
-            <input type="hidden" name="id" value="<?php echo $data['id']; ?>" />
-            <button type="submit" class="plain">Show</button>
-          </form>
-          <form action="edit.php">
-            <input type="hidden" name="_METHOD" value="GET" />
-            <input type="hidden" name="id" value="<?php echo $data['id']; ?>" />
-            <button type="submit" class="plain">Edit</button>
-          </form>
-          <form method="post">
-            <input type="hidden" name="_METHOD" value="DELETE" />
-            <input type="hidden" name="id" value="<?php echo $data['id']; ?>" />
-            <button type="submit" class="plain">Delete</button>
-          </form>
+          <div class="form-inline">
+            <form action="show.php">
+              <input type="hidden" name="_METHOD" value="GET" />
+              <input type="hidden" name="id" value="<?php echo $data['id']; ?>" />
+              <button type="submit" class="plain">Show</button>
+            </form> |
+            <form action="edit.php">
+              <input type="hidden" name="_METHOD" value="GET" />
+              <input type="hidden" name="id" value="<?php echo $data['id']; ?>" />
+              <button type="submit" class="plain">Edit</button>
+            </form> |
+            <form method="post">
+              <input type="hidden" name="_METHOD" value="DELETE" />
+              <input type="hidden" name="id" value="<?php echo $data['id']; ?>" />
+              <button type="submit" class="plain">Delete</button>
+            </form>
+          </div>
         </td>
         <?php
         echo '</tr>';
