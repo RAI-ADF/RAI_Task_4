@@ -1,0 +1,100 @@
+<?php
+	session_start();
+	include_once('connect.php');
+	
+	if(isset($_SESSION['user'])!=''){
+		$user = $_SESSION['user'];
+		if(strcmp($user,'administrator')==0){
+			header("Location :admin.php");
+		}else{
+			header("Location : user_page.php");
+		}
+	}
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>homepage</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7; IE=EmulateIE9">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" type="text/css" href="styles.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="demo.css" media="all" />
+
+	<script src="js/jquery-1.7.2.min.js"></script>
+
+<script>  
+
+$(function(){
+
+	$('<select />').appendTo('nav');
+
+
+	$('<option />', {
+		'selected': 'selected',
+		'value' : '',
+		'text': 'Choise Page...'
+	}).appendTo('nav select');
+
+	$('nav ul li a').each(function(){
+		var target = $(this);
+
+		$('<option />', {
+			'value' : target.attr('href'),
+			'text': target.text()
+		}).appendTo('nav select');
+
+	});
+
+
+	$('nav select').on('change',function(){
+		window.location = $(this).find('option:selected').val();
+	});
+});
+
+
+$(function(){
+	$('nav ul li').hover(
+		function () {
+
+			$('ul', this).slideDown(150);
+		}, 
+		function () {
+
+			$('ul', this).slideUp(150);			
+		}
+	);
+});
+
+</script>
+
+</head>
+<body>
+<div class="container">
+
+            <div class="freshdesignweb-top">
+                <span class="right">
+                </span>
+                <div class="clr"></div>
+            </div>
+			<header>
+				<h1>HOME</h1>
+            </header>       
+     
+	
+		<div id="fdw">
+	
+					<nav>
+						<ul>
+							<li class="current"><a href="index.html">home<span class="arrow"></span></a></li>
+							<li><a href="login.php">Login</a></li>
+							<li><a href="registration.php">Registration</a></li>
+						</ul>
+					</nav>
+		</div>
+	
+    
+</div>
+</body>
+</html>
