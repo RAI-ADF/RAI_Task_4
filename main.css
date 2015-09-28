@@ -1,0 +1,21 @@
+
+body {
+	background: #64b5f6 url(batthern.png);
+}
+
+#login_form{
+	margin: 0 auto;
+	width: 20%;
+	background-color: rgba(0,0,0,0.8);
+	color: #fff;
+	padding: 10px;
+	font-size: 1.2rem;
+	margin-top: 10px;
+	border-radius: 5px;
+}
+
+#login_form label, #login_form input{
+	display: block;
+	margin-top: 5px;
+	line-height: 1.2rem;
+}

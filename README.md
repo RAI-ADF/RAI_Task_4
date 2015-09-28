@@ -31,7 +31,7 @@ The web page must have atleast :
 ##CSS
 * create a responsive dropdown menu layout
 
-##Javascript
+##Javascript --DONE
 * create an email validation in registration form
 * create password validation in registration form (comparing 2 password input)
 * create 2 dropdown lists for place of birth input, create a dynamic dropdown menu to show province/state and city of birth
