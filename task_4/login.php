@@ -21,7 +21,7 @@
 					<label>password</label>
 					<input id="password" type="password" name="password" placeholder="password">
 				</div>
-				<div id="error"></div>
+				<div class="error" id="error"></div>
 				<div>
 					<button type="button" onclick="ajaxFunction()">sign in</button>
 				</div>
