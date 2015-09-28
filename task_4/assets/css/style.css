@@ -320,6 +320,15 @@ section#login-help {
 section#login-help p {
   text-align: center;
 }
+
+div#welcome {
+  margin: 200px auto;
+}
+
+div#welcome p {
+  text-align: center;
+}
+
 /* Attribute selector */
 [class*='col-'] {
   float: left;

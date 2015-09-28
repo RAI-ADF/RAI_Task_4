@@ -15,11 +15,10 @@ require_once('authenticate.php');
 </head>
 <body>
   <?php include "header.php" ?>
-  <div class="row">
-     <div class="col-2">asdasd</div>
-     <div class="col-5">asdsad</div>
-     <div class="col-3">asdsad</div>
-   </div>
+
+  <div id="welcome">
+    <p>Welcome User, your balance is Rp. 1000</p>
+  </div>
 </div>
 </body>
 </html>
