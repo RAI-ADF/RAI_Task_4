@@ -1,0 +1,137 @@
+@charset "UTF-8";
+/* CSS Document */
+@import http://fonts.googleapis.com/css?family=Raleway;
+
+#main {
+	width:960px;
+	margin:150px auto;
+	font-family:"Cambria", "Verdana", sans-serif;
+}
+
+#login {
+	width:300px;
+	float:center;
+	border-radius:3px;
+	background-color:white;
+	font-family:"Cambria", "Verdana", sans-serif;
+	border:1px solid #221f1f;
+	padding:20px 20px 20px;
+	margin-top:20px;
+	margin-left:310px
+}
+
+#signupform {
+	width: 410px;
+	height: 600px;
+	float: center;
+	border-radius: 2px;
+	background-color: white;
+	font-family: "Cambria", "Verdana", sans-serif;
+	border: 1px solid #ccc;
+	padding: 10px 30px 5px;
+	margin-top: 79px;
+	margin-left: 55px
+}
+
+span.error {
+	color:red;
+	margin-left:38px;
+}
+
+span {
+	color:#009688;
+	font-family:"Cambria", "Verdana", sans-serif;
+}
+
+aside {
+	float: right;
+	margin-right: 180px;
+	margin-top: 70px;
+}
+h2 {
+	background-color:#FEFFED;
+	text-align:center;
+	border-radius:10px 10px 0 0;
+	margin:-10px -40px;
+	padding:15px
+}
+
+hr {
+	border:0;
+	border-bottom:1px solid #ccc;
+	margin:10px -40px;
+	margin-bottom:30px
+}
+
+input[type=text],
+input[type=password] {
+	width: 275px;
+	padding: 10px;
+	margin-top: 8px;
+	border: 1px solid #ccc;
+	padding-left: 5px;
+	font-size: 16px;
+	font-family: "Cambria", "Verdana", sans-serif;
+	margin-top: 10px
+}
+
+input[type=text1] {
+	width: 150px;
+	border: 1px solid #ccc;
+	font-size: 13px;
+	font-family: "Cambria", "Verdana", sans-serif;
+}
+
+input[type=regis] {
+	width: 350px;
+	padding: 10px;
+	margin-top: 8px;
+	border: 1px solid #ccc;
+	padding-left: 5px;
+	font-size: 13px;
+	font-family: "Cambria", "Verdana", sans-serif;
+
+}
+
+input[type=submit],
+input[type=button] {
+	width:295px;
+	background-color:#181818;
+	color:#fff;
+	border:2px solid #000000;
+	padding:8px;
+	font-size:15px;
+	cursor:pointer;
+	border-radius:3px;
+	margin-bottom:2px;
+	margin-top:8px
+}
+
+input[type=signup] {
+	width:275px;
+	background-color:#181818;
+	color:#fff;
+	border:2px solid #000000;
+	padding:8px;
+	font-size:15px;
+	cursor:pointer;
+	border-radius:3px;
+	margin-bottom:2px;
+	text-align:center;
+	margin-top:8px
+}
+
+input[type=logout] {
+	width:275px;
+	background-color:white;
+	color:#111010;
+	border:2px solid #000000;
+  
+	padding:8px;
+	font-size:15px;
+	cursor:pointer;
+	border-radius:3px;
+	margin-bottom:2px;
+	text-align:center;
+	margin-top:8px
+}
