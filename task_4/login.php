@@ -44,6 +44,7 @@ if(isset($_SESSION['username']) && isset($_SESSION['is_admin'])){
 	function do_login(){
 		var username = document.getElementById('username').value;
 		var password = document.getElementById('password').value;
+		document.getElementById('message').innerHTML = "";
 
 		create_ajax_request('post', 'do_login.php', "username="+username+"&password="+password,
 			function(response){
