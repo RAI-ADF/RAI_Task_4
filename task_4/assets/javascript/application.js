@@ -28,4 +28,10 @@ $(document).ready(function() {
         $("header > nav").css("display", "none");
     }
   });
+
+
+  $( ".date" ).datepicker({
+    changeMonth: true,
+    changeYear: true
+  });
 });

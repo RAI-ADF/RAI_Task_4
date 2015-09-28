@@ -7,7 +7,7 @@
   </label>
 
   <label name="date">Date
-    <input type="text" name="date" value="<?php echo $data['date']; ?>">
+    <input type="text" name="date" class="date" value="<?php echo $data['date']; ?>">
   </label>
 
   <label name="type">Type

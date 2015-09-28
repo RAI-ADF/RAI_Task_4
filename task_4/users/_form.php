@@ -24,7 +24,7 @@
   </label>
 
   <label name="birthdate">Birthdate
-    <input type="text" name="birthdate" value="<?php echo $data['birthdate']; ?>">
+    <input type="text" name="birthdate" class="date" value="<?php echo $data['birthdate']; ?>">
   </label>
 
   <button type="submit" class="btn-minimal">Save</button>
