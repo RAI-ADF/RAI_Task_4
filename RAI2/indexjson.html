@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JSON JQUERY</title>
+<script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+<script type="text/javascript">
+$("document").ready(function(){
+	/* untuk letak url silahkan di sesuaikan dengan letak script di folder htdocs Anda */
+	$.getJSON('http://localhost/RAI2/json.php', { get_param: 'value' }, function(data) {
+	    $.each(data, function(index, element) {		
+			/* mengisikan table dari hasil json */
+			// alert(element.id);
+			$('#tabledata').find('tbody')
+				.append($('<tr>')
+						.append(
+							'<td>'+element.nama+'</td>'+
+							'<td>'+element.email+'</td>'
+						)
+				);
+	    });
+	});		
+});
+</script>
+</head>
+<body>
+ 
+	<table border="1" width="60%" id="tabledata">
+		<thead>
+			<tr><th>Nama</th><th>Email</th></tr>
+		</thead>
+		<tbody>
+		</tbody>
+	</table>
+	<br />
+</body>
+</html>
