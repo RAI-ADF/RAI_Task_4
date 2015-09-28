@@ -4,9 +4,9 @@ require '../database.php';
 
 $db = Database::instance();
 
-$sql = 'SELECT * FROM mutations ORDER BY id DESC';
+$sql = 'SELECT * FROM mutations WHERE user_id="'.$_SESSION["user_id"].'" ORDER BY id DESC';
 if (isset($_GET["search"])) {
-  $sql = 'SELECT * FROM mutations WHERE name LIKE "%'. $_GET["search"] .'%" ORDER BY id DESC';
+  $sql = 'SELECT * FROM mutations WHERE name LIKE "%'. $_GET["search"] .'%" AND user_id="'.$_SESSION["user_id"].'" ORDER BY id DESC';
 }
 
 $data = array();
