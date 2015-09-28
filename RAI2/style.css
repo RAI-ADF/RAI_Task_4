@@ -1,0 +1,194 @@
+#layoutputih{
+	margin:auto;
+	width:964px;
+	background-color:white;
+}
+#header{
+	border:1px solid black;
+	width:964px;
+	height:100px;
+	background-color:black;
+}
+#search{
+	float:right;
+}
+
+
+/*==========Menu Atas============*/
+#menu{
+	border:1px solid black;
+	margin:auto;
+	width:964px;
+	height:34px;
+	background:white;
+}
+.main_menu{
+	line-height:30px;
+	font-size:20px;
+}
+.main_menu ul{
+	 padding:0px;
+	 margin:0px;
+	 list-style:none;
+}
+
+.main_menu ul li{
+	 background:white;
+	 border-right: 1px solid black;
+	 float:left;
+}
+
+.main_menu ul li a{
+	 color:black;
+	 display:block;
+	 text-decoration:none;
+	 padding:2px;
+}
+
+.main_menu ul li a:hover{
+	 background:#66ccff;
+	 color:white;
+}
+
+.main_menu ul li a:active{
+	 background:white;
+	 color:white;
+}
+/*====================================*/
+
+#layoutputih2{
+	border:1px solid black;
+	margin:auto;
+	width:964px;
+	height:700px;
+	background-color:white;
+}
+#newskirilayout{
+	float:left;
+	width:660px;
+	background-color:white;
+}
+#slidekiri{
+	background-image:url("nature-hd-background-10.jpeg");
+	margin-left:10px;
+	margin-top:10px;
+	float:left;
+	width:636px;
+	height:280px;
+}
+#judulslide{
+	margin-top:210px;
+	border:1px solid #66ccff;
+	float:left;
+	width:634px;
+	background-color:white;
+}
+#newskiri1{
+	border:1px solid #66ccff;
+	margin-left:10px;
+	margin-top:10px;
+	float:left;
+	width:311px;
+	background-color:white;
+	line-height:22px;
+}
+#blackkiri1{
+	margin-left:10px;
+	margin-top:10px;
+	float:left;
+	width:290px;
+	height:150px;
+}
+#newskiri2{
+	border:1px solid #66ccff;
+	margin-left:10px;
+	margin-top:10px;
+	float:left;
+	width:311px;
+	background-color:white;
+	line-height:22px;
+}
+#blackkiri2{
+	margin-left:10px;
+	margin-top:10px;
+	float:left;
+	width:290px;
+	height:150px;
+	background-color:black;
+}
+#newskananlayout{
+	float:right;
+	width:300px;
+	background-color:white;
+}
+#newskanan{
+	border:1px solid black;
+	margin:auto;
+	margin-top:10px;
+	margin-right:10px;
+	height:280px;
+	width:280px;
+	background-color:white;
+	line-height:22px;
+}#newskanan2{
+	margin:auto;
+	margin-top:10px;
+	margin-right:10px;
+	height:280px;
+	width:280px;
+	background-color:white;
+}
+.button{
+	border-bottom:1px solid #66ccff;
+	font-size:12px;
+	color:red;
+	width:270px;
+	height:15px;
+	float:left;
+	padding:5px;
+}
+.button a{
+	color:red;
+	text-decoration:none;
+}
+.button a:hover{
+	 background:#66ccff;
+	 color:white;
+}
+#bottom{
+	float:left;
+	margin:auto;
+	border-right:1px solid black;
+	border-left:1px solid black;
+	border-bottom:1px solid black;
+	width:964px;
+	text-align:right;
+	background-color:white;
+}
+/*==========Menu Bawah============*/
+.menu_bawah{
+	 color:black;
+	 font-size:10px;
+}
+
+.menu_bawah ul{
+	 padding:2px;
+	 margin:0;
+	 list-style:none;
+}
+
+.menu_bawah ul li{
+	 float:left;
+}
+
+.menu_bawah ul li a{
+	 color:black;
+	 text-decoration:none;
+	 padding:2px;
+	 margin:5px;
+}
+
+.menu_bawah ul li a:hover{
+	 background:#66ccff;
+	 color:white;
+}
