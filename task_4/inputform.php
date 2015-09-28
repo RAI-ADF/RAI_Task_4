@@ -6,44 +6,46 @@
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <link rel="stylesheet" href="assets/css/style.css">
    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-   <title>Admin Page</title>
+   <title>Client Page</title>
 </head>
 <body>
 
 <div id='cssmenu'>
 <ul>
-   <li><a href='adminPage.php'><span>Home</span></a></li>
-   <li class='active has-sub'><a href='#'><span>View</span></a>
+   <li><a href='clientPage.php'><span>Home</span></a></li>
+   <li class='active has-sub'><a href='#'><span>Input</span></a>
       <ul>
-         <li class='last'><a href='viewuser.php'><span>View Users</span></a>
-         </li>
-         <li class='last'><a href='viewdata.php'><span>View Data</span></a>
+         <li class='last'><a href='#'><span>Input Form</span></a>
          </li>
       </ul>
    </li>
-   <li><a href='logout.php'><span>Logout </span></a></li>
+    <li><a href='logout.php'><span>Logout </span></a></li>
 </ul>
 </div>
 <div id="bodytopmainPan">
 <div id="bodytopPan">
-	<h1>Welcome</h1>
-    <h2>Admin</h2>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-	
+<?php
+session_start();
+$aksi="/aksi_input.php";
+	 echo " <h2>Input Data Disini</h2>";
+	echo " <form method=POST action='aksi_input.php'>
+          <table class='list'><tbody>
+         <tr><td></td>  <td> <textarea name='isi' id='isi' style='width: 800px; height: 350px;'></textarea></td></tr>";
+    echo "</td></tr>
+          <tr><td class='left' colspan=2><input type=submit value=Simpan >
+          <input type=button value=Batal onclick=self.history.back()></td></tr>
+          </tbody></table></form>";
+?>
 </div>
 </div>
+
+<div id="footermainPan">
+  <div id="footerPan">
+  	<p class="copyright">©Surya Saputra - 1103124304.</p>
+  	<ul class="templateworld">
+    </ul>
+	</div>
+	</div>
 </body>
 </body>
 

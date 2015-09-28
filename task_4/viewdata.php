@@ -26,21 +26,21 @@
 </div>
 <div id="bodytopmainPan">
 <div id="bodytopPan">
-	<h1>Welcome</h1>
-    <h2>Admin</h2>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
+	<?php
+	include 'koneksi.php';
+		$tampil = mysql_query("SELECT * FROM data  ORDER BY Username");
+		echo "<table class='list'><thead>
+          <tr>
+          <td class='left'>username</td>
+          <td class='left'>Isi data</td>
+          </tr></thead><tbody>";
+		  echo " <h2>List data Input</h2>";
+		   while ($r=mysql_fetch_array($tampil)){
+       echo " </tr><td class='left'>$r[username]</td>
+             <td class='left'>$r[isi]</td></tr>";
+				 }
+	?>
+  
 	
 </div>
 </div>
