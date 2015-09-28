@@ -20,11 +20,8 @@ require_once('authenticate.php');
 
   <div class="container">
     <p id="center">
-      Welcome!
+      Welcome, Please select menu from navigation above!
     </p>
-
-    <h2>New Mutation</h2>
-    <?php include 'clientPage.php' ?>
   </div>
 </div>
 </body>

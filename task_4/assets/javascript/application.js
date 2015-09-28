@@ -39,11 +39,21 @@ $(document).ready(function() {
     console.log (selected);
     $.ajax({
       type: "GET",
-      url: "_city.php",
+      url: "/_city.php",
       data: { province: selected }
     }).done(function(data){
       $("select.city").html(data);
+
+      var province = $(".province option:selected").val();
+      var city = $(".city option:selected").val();
+      $("input#birthplace").val(province + ", " + city);
     });
+  });
+
+  $("select.city").change(function(){
+    var province = $(".province option:selected").val();
+    var city = $(".city option:selected").val();
+    $("input#birthplace").val(province + ", " + city);
   });
 
   if ($(".datatable").length > 0){

@@ -82,6 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <select id="city" name="city" class="city">
       <option>City</option>
     </select>
+    <input type="hidden" id="birthplace" name="birthplace" value="">
     <input id="birthplace" name="birthplace" type="text" placeholder="birthplace">
     <input id="birthdate" name="birthdate" type="text" class="date" placeholder="Birthdate">
     <button type="submit" class="btn-minimal">Register</button>

@@ -19,8 +19,17 @@
     <input type="text" name="email" value="<?php echo $data['email']; ?>">
   </label>
 
-  <label name="birthplace">Birthplace
-    <input type="text" name="birthplace" value="<?php echo $data['birthplace']; ?>">
+  <label name="birthplace">Birthplace<br>
+    <select id="province" name="province" class="province">
+      <option>Province</option>
+      <option value="Aceh">Aceh</option>
+      <option value="Jawa Barat">Jawa Barat</option>
+      <option value="Papua">Papua</option>
+    </select>
+    <select id="city" name="city" class="city">
+      <option>City</option>
+    </select>
+    <input type="hidden" id="birthplace" name="birthplace" value="<?php echo $data['birthplace']; ?>">
   </label>
 
   <label name="birthdate">Birthdate
