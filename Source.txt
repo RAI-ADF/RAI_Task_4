@@ -1,0 +1,3 @@
+Dieka
+http://phppot.com/php/php-crud-with-mysql/
+http://www.w3schools.com/ajax/ajax_xmlhttprequest_create.asp
