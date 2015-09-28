@@ -8,6 +8,11 @@
     {
         $username = $_REQUEST['username'];
         $password = $_REQUEST['password'];
+        $status = 0;
+        if ($username=='nabil'){
+            $status =1;
+        }
+    
 
         $connection = mysql_connect("localhost", "root", "");
         $db = mysql_select_db("naik_gunung", $connection);
@@ -15,12 +20,17 @@
         $query = mysql_query("select * from user where password='$password' AND username='$username'", $connection);
         $rows = mysql_num_rows($query);
             if ($rows == 1) {
-                $_SESSION['login_user']=$username; // Membuat Sesi/session
-                echo "success";
-                } else {
-                echo "Username atau Password belum terdaftar";
+                if($status == 1 ){
+                    echo "success1";
                 }
-            mysql_close($connection); // Menutup koneksi
+                else{
+
+                    echo "success";
+                }
+
+                $_SESSION['login_user']=$username;
+            }
+            mysql_close($connection); 
     }
 
 ?>

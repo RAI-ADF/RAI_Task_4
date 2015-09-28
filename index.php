@@ -57,7 +57,8 @@
                     else if(response == "success1")  
                         $("#lg-form").slideUp('slow', function(){
                             $("#message").html('<p class="success">You have logged in successfully!</p><p>Redirecting....</p>');
-                            window.location.href = "http://localhost/rai2/admin/index.html";
+                            window.location.href = "http://localhost/rai2/admin/index.php";
+
                         });
                     else
                         $("#message").html('<p class="error">ERROR: Invalid username and/or password.</p>');
