@@ -51,19 +51,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="assets/javascript/application.js"></script>
+    <!--HTML 5 + IE HACK--><!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 </head>
 
 <?php include "header.php" ?>
 
-<h1>Login</h1>
-<form id="login" method="post">
-  <?php if (isset($_GET['message'])) echo $_GET['message'].'<br>'; ?>
-  <label for="username">Username:</label><br>
-  <input id="username" name="username" type="text" required><br>
-  <label for="password">Password:</label><br>
-  <input id="password" name="password" type="password" required><br>
-  <input type="submit" value="Login">
-</form>
+<section id="login-box">
+  <h1>Login</h1>
+  <form id="login" method="post" class="minimal">
+    <?php if (isset($_GET['message'])) echo $_GET['message'].'<br>'; ?>
+
+
+    <input type="text" name="username" id="username" placeholder="Username" required="required" />
+    <input type="password" name="password" id="password" placeholder="Password" required="required" />
+    <button type="submit" class="btn-minimal">Sign in</button>
+  </form>
+</section>
+<section id="login-help">
+  <p>Don't have account? <a href="#">Click here to register.</a></p>
+</section>
 
 </body>
 </html>
