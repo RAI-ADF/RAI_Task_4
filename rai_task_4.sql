@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 25, 2015 at 10:40 AM
+-- Generation Time: Sep 28, 2015 at 06:17 PM
 -- Server version: 5.5.32
 -- PHP Version: 5.4.19
 
@@ -38,6 +38,19 @@ CREATE TABLE IF NOT EXISTS `admin` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `pesan`
+--
+
+CREATE TABLE IF NOT EXISTS `pesan` (
+  `kodeOrder` int(11) NOT NULL,
+  `productName` varchar(50) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  PRIMARY KEY (`kodeOrder`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user`
 --
 
@@ -48,10 +61,18 @@ CREATE TABLE IF NOT EXISTS `user` (
   `email` varchar(50) NOT NULL,
   `place_of_birth` varchar(50) NOT NULL,
   `date_of_birth` date NOT NULL,
-  `product` varchar(50) NOT NULL,
-  `number_item` int(11) NOT NULL,
   PRIMARY KEY (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`username`, `password`, `name`, `email`, `place_of_birth`, `date_of_birth`) VALUES
+('13123', '1234', 'fauzan', 'mfr.belato@hotmail.com', 'Jawa Barat', '2015-09-10'),
+('66', '345', 'asdasd', 'mfr.belato@hotmail.com', 'Jawa Barat', '2015-09-12'),
+('asdasd', '123', 'asdasd', 'asdasd@adaasd', 'Jawa Barat', '2015-09-10'),
+('desri', '890', 'desri', 'desri@asda', 'Jawa Barat', '2015-09-10');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

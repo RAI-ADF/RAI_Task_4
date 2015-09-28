@@ -15,3 +15,5 @@ $query = mysql_query("insert into user values('$username', '$password',
 if ($query) {
     header('location:login.php?registered=true');
 }
+
+mysql_close($connect);

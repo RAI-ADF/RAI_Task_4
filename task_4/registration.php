@@ -6,7 +6,7 @@
 	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
   	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 	<link rel="stylesheet" href="/resources/demos/style.css">
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" type="text/javascript">
+	
 
 	<style type="text/css">
 		h1	{background-color:darkorange;  font-family: verdana; color: white}
@@ -32,8 +32,7 @@
 </head>
 <body>
 
- 	
-
+ 
 
 	<h1>SIGN UP</h1>
 

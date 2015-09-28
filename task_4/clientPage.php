@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <?php include('loginCheck.php') ?>
 	<title>ORDER PRODUCT</title>
 
 </head>
@@ -12,7 +13,7 @@
         <tr>
             <td>Order ID</td>
             <td>:</td>
-            <td><input type="text" name="orderID" maxlength="20" required="required"/></td>
+            <td><input type="text" name="kodeOrder" maxlength="20" required="required"/></td>
         </tr>
         <tr>
             <td>Product Name</td>
@@ -25,7 +26,10 @@
             <td><input type="number" min="0" name="quantity" required="required" /></td>
         </tr>
         <tr>
-            <td align="right" colspan="3"><input type="submit" name="submit" value="Simpan" /></td>
+            <td align="right" colspan="3"><input type="submit" name="submitProduk" value="Order" /></td>
+        </tr>
+        <tr>
+            <td align="left"><a href="logout.php">LOGOUT</a></td>
         </tr>
     </tbody>
 </table>
