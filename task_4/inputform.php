@@ -15,7 +15,7 @@
    <li><a href='clientPage.php'><span>Home</span></a></li>
    <li class='active has-sub'><a href='#'><span>Input</span></a>
       <ul>
-         <li class='last'><a href='inputform.php'><span>Input Form</span></a>
+         <li class='last'><a href='#'><span>Input Form</span></a>
          </li>
       </ul>
    </li>
@@ -24,23 +24,18 @@
 </div>
 <div id="bodytopmainPan">
 <div id="bodytopPan">
-	<h1>Welcome</h1>
-    <h2>Client Page</h2>
-    <p>Silahkan pilih menu input</p>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-	
+<?php
+session_start();
+$aksi="/aksi_input.php";
+
+	echo " <form method=POST action='aksi_input.php'>
+          <table class='list'><tbody>
+         <tr><td></td>  <td> <textarea name='isi' id='isi' style='width: 800px; height: 350px;'></textarea></td></tr>";
+    echo "</td></tr>
+          <tr><td class='left' colspan=2><input type=submit value=Simpan >
+          <input type=button value=Batal onclick=self.history.back()></td></tr>
+          </tbody></table></form>";
+?>
 </div>
 </div>
 
