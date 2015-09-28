@@ -20,7 +20,7 @@ require_once('authenticate.php');
 
   <div class="container">
     <p id="center">
-      Welcome User, your balance is Rp. 1000
+      Welcome!
     </p>
 
     <h2>New Mutation</h2>
