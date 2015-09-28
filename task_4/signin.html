@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link type="text/css" rel="stylesheet" href="login.css"/>
+<script type="text/javascript" src="login.js"></script>
+<script type="text/javascript" src="emailvalidation.js"></script>
+</head>
+
+<body>
+<div class="form">
+      
+      <ul class="tab-group">
+        <li class="tab"><a href="signup.html">Sign Up</a></li>
+        <li class="tab active"><a href="signin.html">Log In</a></li>
+      </ul>
+      
+        <div id="login">   
+          <h1>Welcome Back!</h1>
+          
+          <form action="login.php" method="post">
+          
+            <div class="field-wrap">
+            <label>
+              Email Address<span class="req">*</span>
+            </label>
+			
+            <input type="email"required autocomplete="off" name="femail" id = "femail"/>
+			
+          </div>
+          
+          <div class="field-wrap">
+            <label>
+              Password<span class="req">*</span>
+            </label>
+            <input type="password"required autocomplete="off" name="fpassword" id="email"/>
+          </div>
+          
+          
+          <button class="button button-block" onclick=""/>Log In</button>
+          
+          </form>
+		  <?php include "login.php";?>
+
+        </div>
+        
+      </div><!-- tab-content -->
+      
+</div> <!-- /form -->
+</body>
+</html>

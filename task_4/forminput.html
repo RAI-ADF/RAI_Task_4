@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link type="text/css" rel="stylesheet" href="login.css"/>
+<script type="text/javascript" src="login.js"></script>
+</head>
+<body>
+<div class="form">
+      
+      <ul class="tab-group">
+        <li class="tab active"><a href="forminput.html">Form Input</a></li>
+        <li class="tab"><a href="viewuseruser.php">View User</a></li>
+      </ul>
+      
+        <div id="forminput">   
+          <h1>Form Input</h1>
+		  
+		  <form method="post" action= "\" id = "form">
+		  
+          <div class="field-wrap">
+              <label>
+                Name<span class="req">*</span>
+              </label>
+              <input type="text" name="fname" id="fname"  required autocomplete="off"/>
+            </div>
+			
+			<div class="field-wrap">
+              <label>
+                Deskripsi<span class="req">*</span>
+              </label>
+              <input type="text" name="fdes" id="fdes"  required autocomplete="off"/>
+            </div>
+       
+		  
+          <button type="submit" name="submit" id="submit" value="submit" class="button button-block"/>Add</button>
+	
+          </form>
+		  <?php include "signup.php";?>
+
+        </div>
+        
+      </div><!-- tab-content -->
+      
+</div> <!-- /form -->
+</body>
+</html>
