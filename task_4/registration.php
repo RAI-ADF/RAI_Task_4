@@ -5,9 +5,9 @@ session_start();
 if(isset($_SESSION['username']) && isset($_SESSION['is_admin'])){
 	
 	if($_SESSION['is_admin'] == true){
-		header("Redirect:adminPage.php");
+		header("Location:adminPage.php");
 	} else if ($_SESSION['is_admin'] == false){
-		header("Redirect:clientPage.php");
+		header("Location:clientPage.php");
 	}
 
 	die();

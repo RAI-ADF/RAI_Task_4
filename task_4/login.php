@@ -3,7 +3,7 @@
 session_start();
 
 if(isset($_SESSION['username']) && isset($_SESSION['is_admin'])){
-	echo $_SESSION['is_admin'];
+	
 	if($_SESSION['is_admin'] == true){
 		header("Location:adminPage.php");
 	} else if ($_SESSION['is_admin'] == false){
