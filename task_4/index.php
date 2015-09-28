@@ -19,6 +19,7 @@ require_once('authenticate.php');
   <?php include "header.php" ?>
 
   <div class="container">
+    <span><?php echo $_GET["message"] ?></span>
     <p id="center">
       Welcome, Please select menu from navigation above!
     </p>

@@ -21,6 +21,7 @@ $action = 'POST';
 <?php include "../header.php" ?>
 
 <div class="container">
+  <span><?php echo $_GET["message"] ?></span>
   <h2>New User</h2>
   <?php include '_form.php'; ?>
 </div>

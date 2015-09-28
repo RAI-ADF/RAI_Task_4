@@ -7,7 +7,9 @@
     <ul>
       <li><a href="/index.php">Home</a></li>
       <li><a href="/mutations/index.php">Mutations</a></li>
-      <li><a href="/users/index.php">Users</a></li>
+      <?php if ($_SESSION["user_id"] == "1") { ?>
+        <li><a href="/users/index.php">Users</a></li>
+      <?php } ?>
       <li>
         <a href="#">Welcome User
           <span class="toggle">Expand</span>

@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
   }
   Database::release();
-  header("Location: index.php?message".$message);
+  header("Location: index.php?message=".$message);
 } else {
 ?>
 
@@ -53,6 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <?php include "../header.php" ?>
 
 <div class="container">
+  <span><?php echo $_GET["message"] ?></span>
   <div class='form-inline'>
     <form method="post" action="new.php">
       <button type="submit" class="btn-minimal">New</button>

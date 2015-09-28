@@ -33,6 +33,8 @@ if (!isset($_GET['id'])) {
 <?php include "../header.php" ?>
 
 <div class="container">
+  <span><?php echo $_GET["message"] ?></span>
+  
   <h2><?php echo $data['name']; ?></h2>
 
   <b>Name:</b>

@@ -34,6 +34,7 @@ if (!isset($_GET['id'])) {
 <?php include "../header.php" ?>
 
 <div class="container">
+  <span><?php echo $_GET["message"] ?></span>
   <h2>Edit <?php echo $data['name']; ?></h2>
   <?php include '_form.php'; ?>
 </div>
