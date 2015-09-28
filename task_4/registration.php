@@ -1,18 +1,59 @@
-<html><head>
+<?php
+	session_start();
+	if(isset($_SESSION['user'])!="")
+	{
+		header("Location: home.php");
+	}
+	include_once 'dbconnect.php';
+	
+	if(isset($_POST['btn-submit']))
+	{
+		$uname = mysql_real_escape_string($_POST['username']);
+		$pass = md5(mysql_real_escape_string($_POST['password']));
+		$name = mysql_real_escape_string($_POST['name']);
+		$email = mysql_real_escape_string($_POST['email']);
+		$place = mysql_real_escape_string($_POST['email']);
+		$date = mysql_real_escape_string($_POST['datepicker']);
+		
+		if(mysql_query("INSERT INTO user(user_id, username, password, name, email, place, dateofbirth) VALUES ("", $uname, $pass, $name, $email, $place, $date)"))
+		{
+			?>
+			<script>alert('successfully registered ');</script>
+			<?php
+		}
+		else
+		{
+			?>
+			<script>alert('error while registering you...');</script>
+			<?php
+		}
+	}
+	?>
+<!doctype html>
+<html>
+<head>
 <meta charset="utf-8">
 <title>Register</title>
+	<!-- css register and validation -->
 	<link rel="stylesheet" type="text/css" href="../css/register-css.css">
     <link rel="stylesheet" type="text/css" href="/code_examples/tutorial.css">
 	<script type="text/javascript" src="/code_examples/passtest.js"></script>
-	<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>  
+	<!-- start jQuery datepicker -->
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>  
    	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>  
    	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script> 
 	<script type="text/javascript">
     	$(function() {
-        	$("#datepicker").datepicker({ dateFormat: "yy-mm-dd" }).val()
+        	$("#datepicker").datepicker({
+			dateFormat: "yy-mm-dd", 
+			changeMonth: true,
+			changeYear: true
+			}).val()
        	});
     </script>
-   	<script language="javascript">
+    <!-- end jQuery datepicker -->
+   	<!--  start javascript validation email and password -->
+	<script language="javascript">
 		function checkEmail() {
 
 		var email = document.getElementById('email');
@@ -59,6 +100,7 @@
 			}
 		}  
     </script>
+    <!--  end javascript validation email and password -->
 </head>
 
 <body>
@@ -73,27 +115,27 @@
         	<input id="email" type="text" placeholder="Email" required="" onKeyUp="javascript:checkEmail();">
             <span id="validEmail" class="validEmail"></span>
             <div class="form-group">
-                        <div align="center">
-                          <select id="prov">
-                            <option value="0">Province of Birth</option>
-                            <option value="1">Jawa Barat</option>
-                            <option value="2">Jawa Tengah</option>
-                            <option value="3">Jawa Timur</option>
-                          </select>
-                          <select id="city" disabled="true">
-                            <option value="0">City of Birth</option>
-                            <option value="1">Jawa Barat</option>
-                            <option value="2">Jawa Tengah</option>
-                            <option value="3">Jawa Timur</option>
-                          </select>
-                        </div>
+                <div align="center">
+                  <select id="prov">
+                    <option value="0">Province of Birth</option>
+                    <option value="1">Jawa Barat</option>
+                    <option value="2">Jawa Tengah</option>
+                    <option value="3">Jawa Timur</option>
+                  </select>
+                  <select id="city" disabled="true">
+                    <option value="0">City of Birth</option>
+                    <option value="1">Jawa Barat</option>
+                    <option value="2">Jawa Tengah</option>
+                    <option value="3">Jawa Timur</option>
+                  </select>
+                </div>
             </div>
             <div align="center">
               <input id="datepicker" type="text" placeholder="Date of Birth" required="">
                 </div>
         </fieldset>
         <fieldset id="actions">
-        <input type="button" id="submit" value="Register" onClick="">
+        <input type="button" id="submit" name="btn-submit" value="Register">
         </fieldset>
 </form>
 </body>
