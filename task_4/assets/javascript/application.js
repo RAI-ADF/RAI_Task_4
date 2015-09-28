@@ -45,10 +45,13 @@ $(document).ready(function() {
       $("select.city").html(data);
     });
   });
+
+  if ($(".datatable")){
+    load_table("/" + $(".datatable").attr("id") + "/index.json.php");
+  }
 });
 
-function validate_password()
-{
+function validate_password() {
     var pass1 = document.getElementById('password');
     var pass2 = document.getElementById('password_confirmation');
 
@@ -59,8 +62,7 @@ function validate_password()
     }
 }
 
-function validate_email()
-{
+function validate_email() {
     var format = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
     var email = document.getElementById('email');
 
@@ -69,4 +71,57 @@ function validate_email()
     }else{
         email.style.backgroundColor = "#ff6666";
     }
+}
+
+function table_action_form(action, method, id, text, form_method){
+  if (typeof(form_method)==='undefined') form_method = "get";
+
+  return "\
+  <form action='"+ action +"' method='"+ form_method +"'> \
+    <input type='hidden' name='_METHOD'  value='"+ method + "' /> \
+    <input type='hidden' name='id' value='"+ id +"' /> \
+    <button type='submit' class='plain'>"+ text +"</button>\
+  </form>";
+}
+
+function load_table(json_url) {
+  var data = $.ajax({
+    url: json_url,
+    dataType: "json",
+    success: function(data) {
+      var tabledata = data.lines;
+
+      $(".datatable").find("tr:gt(0)").remove();
+
+      if( data.length === 0)
+      {
+           $('#message').html('Sorry, <strong>no</strong> rows returned!');
+           return;
+      }
+
+      for( var i=0; i < data.length; i++ )
+      {
+         var line = data[i];
+         $('.datatable > tbody:last').append(function(){
+           var html_data = "<tr>";
+           $.each(line, function(k,v){
+             html_data += "<td>"+v+"</td>";
+           });
+           html_data += "\
+           <td> \
+            <div class='form-inline'>"
+              + table_action_form("show.php", "GET", line.id, "Show") +"|"
+              + table_action_form("edit.php", "GET", line.id, "Edit") +"|"
+              + table_action_form("index.php", "DELETE", line.id, "Delete", "post") +
+            "</div> \
+           </td>";
+           return html_data+"</tr>";
+         });
+      }
+    },
+    error: function(data, errorText)
+    {
+      $("#message").html(errorText).show();
+    }
+  });
 }

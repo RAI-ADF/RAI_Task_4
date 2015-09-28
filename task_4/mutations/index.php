@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <button type="submit" class="btn-minimal">New</button>
   </form>
   <br>
-  <table class="table" id="mutations">
+  <table class="datatable" id="mutations">
     <thead>
       <tr>
         <th>ID</th>
@@ -70,42 +70,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       </tr>
     </thead>
     <tbody>
-    <?php
-     $db = Database::instance();
-     $sql = 'SELECT * FROM mutations ORDER BY id DESC';
-     foreach ($db->query($sql) as $data) {
-        echo '<tr>';
-        echo '<td>'. $data['id'] . '</td>';
-        echo '<td>'. $data['name'] . '</td>';
-        echo '<td>'. $data['date'] . '</td>';
-        echo '<td>'. $data['type'] . '</td>';
-        echo '<td>'. $data['amount'] . '</td>';
-        echo '<td>'. $data['note'] . '</td>';
-        ?>
-        <td>
-          <div class="form-inline">
-            <form action="show.php">
-              <input type="hidden" name="_METHOD" value="GET" />
-              <input type="hidden" name="id" value="<?php echo $data['id']; ?>" />
-              <button type="submit" class="plain">Show</button>
-            </form> |
-            <form action="edit.php">
-              <input type="hidden" name="_METHOD" value="GET" />
-              <input type="hidden" name="id" value="<?php echo $data['id']; ?>" />
-              <button type="submit" class="plain">Edit</button>
-            </form> |
-            <form method="post">
-              <input type="hidden" name="_METHOD" value="DELETE" />
-              <input type="hidden" name="id" value="<?php echo $data['id']; ?>" />
-              <button type="submit" class="plain">Delete</button>
-            </form>
-          </div>
-        </td>
-        <?php
-        echo '</tr>';
-     }
-     Database::release();
-    ?>
     </tbody>
   </table>
 </div>
