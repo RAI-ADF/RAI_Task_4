@@ -1,4 +1,7 @@
 <?php include("templates/header.php"); ?>
+<div id="backgrounds" data-src="assets/img/about.jpg">
+	
+</div>
 <div class="fix-width" id="content">
 	<h1>PROFILE US</h1>	
 
@@ -9,7 +12,7 @@
 	HIMA IF terbentuk pada akhir tahun 2014 pada Musyawarah Besar Mahasiswa S1 Teknik Informatika. HIMA IF adalah wadah bagi maahasiswa S1 Teknik Informatikaa untuk berkreasi, berinovasi dan mengembangkaan minat dan bakat khususnya pada bidang teknik informatika.
 
 	HIMA IF memiliki tujuan untuk mewujudkan mahasiswa Program Studi S1 Teknik Informatika yang beriman dan bertakwa, mandiri dan jujur dalam bersikap, berwawasan global yang memiliki kompetensi strategis bagi terbentuknya mahasiswa yang berintelektualitas tinggi serta bertanggungjawab, mampu bekerja sama dan mengembangkan diri baik secara keilmuan maupun sosial.
-	<img src="assets/img/about.jpg" style="margin:15px 0">
+	<!-- <img src="assets/img/about.jpg" style="margin:15px 0"> -->
 
 	HIMA IF memiliki fungsi :
 

@@ -18,13 +18,13 @@ if (isset($_COOKIE["username"])){
 	<div id="header" class="full-width">
 		<div class="fix-width act-table">
 			<div class="act-cell">
-				<img src="assets/img/himaiflogo.jpeg" id="logo">
+				<a href="index.php"><img src="assets/img/logo.png" id="logo"></a>
 			</div>
 			<div class="act-cell">
 				<ul>
 					<a href="index.php"><li>Home</li></a>
 					<a href="about.php"><li>About</li></a>
-					<li>Contact Us</li>
+					<a href="contact_us.php"><li>Contact Us</li></a>
 					<?php
 						if ($isLogin==true){
 					?>

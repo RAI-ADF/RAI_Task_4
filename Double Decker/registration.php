@@ -6,13 +6,19 @@
 	}
 ?>
 <?php include("templates/header.php"); ?>
+<div id="backgrounds" data-src="assets/img/ss2.jpg">
+	
+</div>
+
 <div class="fix-width" id="content">
+<center>
+	<h1>Register Now!</h1>
 	<form name="signin" method="post">
 	<table>
 		<tr>
 			<td><label>First name</label></td>
 			<td>:</td>
-			<td><input id="firstname" type="text" name="firstname" placeholder="First name"></td>
+			<td><input id="firstname" type="text" name="firstname"></td>
 		</tr>
 		<tr>
 			<td><label>Last name</label></td>
@@ -65,6 +71,7 @@
 			<td colspan="3"><div id="messages"></div>
 			</td>
 		</tr>
+		</center>
 	</table>
 	<input type="submit" value="submit">
 	</form>

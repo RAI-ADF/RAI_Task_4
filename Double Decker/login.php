@@ -6,7 +6,13 @@
 	}
 ?>
 <?php include("templates/header.php"); ?>
+<div id="backgrounds" data-src="assets/img/ss4.jpg">
+	
+</div>
+
 <div class="fix-width" id="content">
+<center>
+	<h1>Login Here</h1>
 	<form name="login" method="post">
 	<table>
 		<tr>
@@ -23,6 +29,7 @@
 			<td colspan="3"><div id="messages"></div>
 			</td>
 		</tr>
+		</center>
 	</table>
 	<input type="submit" value="submit">
 	</form>
