@@ -11,7 +11,6 @@
 		<div id="main">
 			<div style="text-align:center">Welcome!</div>
 
-
 			<input id="logout" type="button" onclick="location.href='logout.php';" value="Logout" />
 		</div>
 	</div>

@@ -11,8 +11,9 @@
 
 	<body>
 		<div id="main">
-			<b id="welcome">Welcome <i><?php echo $login_session; ?></i></b>
-			<b id="logout"><a href="logout.php">Log Out</a></b>
+			<div style="text-align:center">Welcome!</div>
+
+			<input id="logout" type="button" onclick="location.href='logout.php';" value="Logout" />
 		</div>
 	</body>
 </html>
