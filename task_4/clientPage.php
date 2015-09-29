@@ -30,8 +30,7 @@ if(isset($_SESSION['username'])!="")
          <li><a href='#'><span>Input Form</span></a></li>
       </ul>
    </li>
-   <li><a href='#'><span>About</span></a></li>
-   <li class='last'><a href='#'><span>Log Out</span></a></li>
+   <li class='last'><a href='logout.php'><span>Log Out</span></a></li>
 </ul>
 </div>
 

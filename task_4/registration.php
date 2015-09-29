@@ -1,38 +1,37 @@
-<?php
-	session_start();
-	if(isset($_SESSION['username'])!="")
-	{
-		if(isset($_SESSION['status'])=="admin"){
-			header("Location: adminPage.php");   
-		}else{
-			header("Location: clientPage.php");   
-		}
-	}
-	include_once 'dbconfig.php';
-	
-	if(isset($_POST['btn-submit']))
-	{
-		$uname = mysql_real_escape_string($_POST['username']);
-		$pass = md5(mysql_real_escape_string($_POST['password']));
-		$name = mysql_real_escape_string($_POST['name']);
-		$email = mysql_real_escape_string($_POST['email']);
-		$place = mysql_real_escape_string($_POST['city']);
-		$date = mysql_real_escape_string($_POST['datepicker']);
-		
-		if(mysql_query("INSERT INTO user(user_id, username, password, name, email, place, dateofbirth) VALUES ('', '$uname', '$pass', '$name', '$email', '$place', '$date')"))
-		{
-			?>
-			<script>alert('successfully registered ');</script>
-			<?php
-		}
-		else
-		{
-			?>
-			<script>alert('error while registering you...');</script>
-			<?php
-		}
-	}
-	?>
+<?php    
+    session_start();
+    if(isset($_SESSION['username'])!="")
+    {
+        if(isset($_SESSION['status'])=="admin"){
+            header("Location: adminPage.php");   
+        }else{
+            header("Location: clientPage.php");   
+        }
+    }
+    
+    include_once 'dbconfig.php';
+    
+    if(isset($_POST['btn-submit']))
+    {
+        $uname = mysql_real_escape_string($_POST['username']);
+        $pass = md5(mysql_real_escape_string($_POST['password']));
+        $name = mysql_real_escape_string($_POST['name']);
+        $email = mysql_real_escape_string($_POST['email']);
+        $place = mysql_real_escape_string($_POST['city']);
+        $date = mysql_real_escape_string($_POST['datepicker']);
+            
+            if(mysql_query("INSERT INTO user(user_id, username, password, name, email, place, dateofbirth) VALUES ('', '$uname', '$pass', '$name', '$email', '$place', '$date')"))
+         {
+                header("Location: index.php");
+         }
+         else
+         {
+          ?>
+            <script>alert('error while registering you...');</script>
+            <?php
+     }
+    }
+?>
 <!doctype html>
 <html>
 <head>
@@ -159,8 +158,8 @@
 </head>
 
 <body onLoad="load_prov()">
-	<form id="register">
-        <h1>Register</h1>
+	<form name="register" id="register">
+      <h1>Register</h1>
         <fieldset id="inputs">
             <input id="username" type="text" placeholder="Username" autofocus="" required="">   
             <input id="password" type="password" placeholder="Password" required="">
@@ -171,12 +170,12 @@
             <span id="validEmail" class="validEmail"></span>
             <div class="form-group">
                 <div align="center">
-                   	<select name="prov" id="prov" onchange="load_city();" required>
-                        <option selected>Choose a province</option>
-                    </select>
-                    <select name="city" id="city" required>
-                        <option>Choose a city</option>
-                    </select>
+               	  <select name="prov" id="prov" onchange="load_city();" required>
+                    <option selected>Choose a province</option>
+                  </select>
+                  <select name="city" id="city" required>
+                    <option>Choose a city</option>
+                  </select>
                 </div>
             </div>
             <div align="center">
