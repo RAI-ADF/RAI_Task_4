@@ -3,7 +3,7 @@ PHP, Javascript, AJAX, jQuery
 
 ##Dynamic Web Page
 Create a web page to store and manage data.<br>
-There are 2 user roles : admin and user
+There are 2 user roles : admin and user														-
 * user can input new data and view all data he/she has submitted
 * admin can view data users and all data that has been submitted
 The web page must have atleast : 
@@ -19,7 +19,7 @@ The web page must have atleast :
 ##PHP - Form and Database
 * create session and cookies for each user that log in the web
 * user basic CRUD syntax to manage the data in database. do not use framework or jQuery
-* user data registration must have at least
+* user data registration must have at least													-
   * username (as ID), 
   * password, 
   * name, 
@@ -46,5 +46,5 @@ The web page must have atleast :
  * try to add animation when login failed by updating the DOM using AJAX
 
 ##jQuery
-* create a datepicker using jQuery
+* create a datepicker using jQuery															-
 * view table data in user page using jQuery + JSON
