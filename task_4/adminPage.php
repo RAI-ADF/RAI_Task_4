@@ -1,3 +1,14 @@
+<?php
+session_start();
+if(isset($_SESSION['username'])!="")
+{
+    if(isset($_SESSION['status'])=="admin"){
+        header("Location: adminPage.php");   
+    }else{
+        header("Location: clientPage.php");   
+    }
+}
+?>
 <!doctype html>
 <html lang=''>
 <head>

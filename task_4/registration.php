@@ -1,10 +1,14 @@
 <?php
 	session_start();
-	if(isset($_SESSION['user'])!="")
+	if(isset($_SESSION['username'])!="")
 	{
-		header("Location: home.php");
+		if(isset($_SESSION['status'])=="admin"){
+			header("Location: adminPage.php");   
+		}else{
+			header("Location: clientPage.php");   
+		}
 	}
-	include_once 'dbconnect.php';
+	include_once 'dbconfig.php';
 	
 	if(isset($_POST['btn-submit']))
 	{
@@ -12,10 +16,10 @@
 		$pass = md5(mysql_real_escape_string($_POST['password']));
 		$name = mysql_real_escape_string($_POST['name']);
 		$email = mysql_real_escape_string($_POST['email']);
-		$place = mysql_real_escape_string($_POST['email']);
+		$place = mysql_real_escape_string($_POST['city']);
 		$date = mysql_real_escape_string($_POST['datepicker']);
 		
-		if(mysql_query("INSERT INTO user(user_id, username, password, name, email, place, dateofbirth) VALUES ("", $uname, $pass, $name, $email, $place, $date)"))
+		if(mysql_query("INSERT INTO user(user_id, username, password, name, email, place, dateofbirth) VALUES ('', '$uname', '$pass', '$name', '$email', '$place', '$date')"))
 		{
 			?>
 			<script>alert('successfully registered ');</script>
@@ -43,13 +47,64 @@
    	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>  
    	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script> 
 	<script type="text/javascript">
-    	$(function() {
+		var ajaxRequest;
+    
+		$(function() {
         	$("#datepicker").datepicker({
 			dateFormat: "yy-mm-dd", 
 			changeMonth: true,
 			changeYear: true
 			}).val()
-       	});
+       	
+		function load_prov () {
+			var province = document.getElementById('prov');
+			
+			create_ajax_request("GET", "get_city.php", "", 
+				function(response) {
+					province.innerHTML += response;
+				},
+
+				function() {
+					alert('Terjadi kesalahan ketika mengambil data provinsi');
+				}
+			);
+		}
+
+		function load_city () {
+			var province = document.getElementById('prov').value;
+			
+			create_ajax_request("GET", "get_city.php?prov=" + province, "", 
+				function(response) {
+					document.getElementById('city').innerHTML = response;
+				},
+
+				function() {
+					alert('Terjadi kesalahan ketika mengambil data kota');
+				}
+			);
+		}
+			function create_ajax_request(method, url, data, on_success, on_fail) {
+	
+		if (window.XMLHttpRequest) {
+			ajaxRequest = new XMLHttpRequest();
+		} else {
+			ajaxRequest = new ActiveXObject("Microsoft.XMLHTTP");
+		}
+	
+		ajaxRequest.onreadystatechange = function(){
+	
+			if(ajaxRequest.readyState == 4 && ajaxRequest.status == 200){
+				var response = ajaxRequest.responseText;
+				on_success(response);
+			} else if (ajaxRequest.readyState == 4) {
+				on_fail();
+			}
+	
+		};
+	
+		ajaxRequest.open(method, url, true);
+		ajaxRequest.send(data);
+		});
     </script>
     <!-- end jQuery datepicker -->
    	<!--  start javascript validation email and password -->
@@ -103,7 +158,7 @@
     <!--  end javascript validation email and password -->
 </head>
 
-<body>
+<body onLoad="load_prov()">
 	<form id="register">
         <h1>Register</h1>
         <fieldset id="inputs">
@@ -116,18 +171,12 @@
             <span id="validEmail" class="validEmail"></span>
             <div class="form-group">
                 <div align="center">
-                  <select id="prov">
-                    <option value="0">Province of Birth</option>
-                    <option value="1">Jawa Barat</option>
-                    <option value="2">Jawa Tengah</option>
-                    <option value="3">Jawa Timur</option>
-                  </select>
-                  <select id="city" disabled="true">
-                    <option value="0">City of Birth</option>
-                    <option value="1">Jawa Barat</option>
-                    <option value="2">Jawa Tengah</option>
-                    <option value="3">Jawa Timur</option>
-                  </select>
+                   	<select name="prov" id="prov" onchange="load_city();" required>
+                        <option selected>Choose a province</option>
+                    </select>
+                    <select name="city" id="city" required>
+                        <option>Choose a city</option>
+                    </select>
                 </div>
             </div>
             <div align="center">
