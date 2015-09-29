@@ -1,36 +1,31 @@
-<html>
-<head>
-	<script>
-		var ajaxRequest;
-		function ajaxFunction(){
-			if (window.XMLHttpRequest){
-				ajaxRequest=new XMLHttpRequest();
-			}else{
-				ajaxRequest=new ActiveXObject("Microsoft.XMLHTTP");
-			}
-			ajaxRequest.onreadystatechange = processQuery;
-			
-			var username = document.getElementById('username');
-			var password = document.getElementById('password');
-			
-			ajaxRequest.open("POST","server_login.php",true);
-			ajaxRequest.send("username="+username.value+"&password="+password.value);
+<?php
+	include 'koneksi.php';
+	
+	$username = $_POST['username'];
+	$password = $_POST['password'];
+	
+	$query = "SELECT * FROM user WHERE username='$username' and password='$password'";
+	
+	$result = mysql_query($query)or die(mysql_error());
+	$num_row = mysql_num_rows($result);
+	$row=mysql_fetch_array($result);
+	if( $num_row >=1 ) {
+		echo 'true';
+		session_start();
+		$_SESSION['username']=$row['username'];		
+		$_SESSION['type'] =$row['type'];
+		if ($_SESSION['type'] ==1) {
+			// echo 'admin';
+			// $_SESSION['counter'] += 1;
+			header("Location: adminPage.php");
+		}elseif ($_SESSION['type'] ==2) {
+			// echo 'user';
+			header("Location: clientPage.php");
 		}
-		
-		function processQuery(){
-			if(ajaxRequest.readyState == 4){
-				var ajaxDisplay = document.getElementById('ajaxDiv');
-				ajaxDisplay.innerHTML = ajaxRequest.responseText;
-			}
-		}
-	</script>
-</head>
-<body>
-	<form method="post">
-		Username:<input type="text" name="username" placeholder="Username"><br>
-		Password:<input type="password" name="password" placeholder="Password"><br>
-		<input type="submit" value="Submit" onclick="ajaxFunction"> 
-	</form>
-</body>
-</html>
-
+		// $msg = "visit this page ". $_SESSION['counter'];
+		// echo ($msg);
+	}else{
+		echo 'User tidak terdaftar, silakan registrasi <a href="registration.php">di sini</a>';
+		// header("Location: ./");
+	}
+?>
